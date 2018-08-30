@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta name="author" content="xovel">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vue.js</title>
+  <link href="./assets/core.css" rel="stylesheet">
+  <link href="./assets/github.css" rel="stylesheet">
+
+  <link href="./assets/vue.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="box">
+  <h1>Vue.js 2.x</h1>
+</header>
+
+<div class="box" id="main">
+  <nav>
+    <ul id="menu">
+      <li><h2>Guide</h2></li>
+      <li><h3>Essentials</h3></li>
+      <li><a href="#/guide/installation">Installation</a></li>
+      <li><a href="#/guide/index">Introduction</a></li>
+      <li><a href="#/guide/instance">The Vue Instance</a></li>
+      <li><a href="#/guide/syntax">Template Syntax</a></li>
+      <li><a href="#/guide/computed">Computed Properties and Watchers</a></li>
+      <li><a href="#/guide/class-and-style">Class and Style Bindings</a></li>
+      <li><a href="#/guide/conditional">Conditional Rendering</a></li>
+      <li><a href="#/guide/list">List Rendering</a></li>
+      <li><a href="#/guide/events">Event Handling</a></li>
+      <li><a href="#/guide/forms">Form Input Bindings</a></li>
+      <li><a href="#/guide/components">Components Basics</a></li>
+      <li><h3>Components In-Depth</h3></li>
+      <li><a href="#/guide/components-registration">Component Registration</a></li>
+      <li><a href="#/guide/components-props">Props</a></li>
+      <li><a href="#/guide/components-custom-events">Custom Events</a></li>
+      <li><a href="#/guide/components-slots">Slots</a></li>
+      <li><a href="#/guide/components-dynamic-async">Dynamic & Async Components</a></li>
+      <li><a href="#/guide/components-edge-cases">Handling Edge Cases</a></li>
+      <li><h3>Transitions & Animation</h3></li>
+      <li><a href="#/guide/transitions">Enter/Leave & List Transitions</a></li>
+      <li><a href="#/guide/transitioning-state">State Transitions</a></li>
+      <li><h3>Reusability & Composition</h3></li>
+      <li><a href="#/guide/mixins">Mixins</a></li>
+      <li><a href="#/guide/custom-directive">Custom Directives</a></li>
+      <li><a href="#/guide/render-function">Render Functions & JSX</a></li>
+      <li><a href="#/guide/plugins">Plugins</a></li>
+      <li><a href="#/guide/filters">Filters</a></li>
+      <li><h3>Tooling</h3></li>
+      <li><a href="#/guide/deployment">Production Deployment</a></li>
+      <li><a href="#/guide/single-file-components">Single File Components</a></li>
+      <li><a href="#/guide/unit-testing">Unit Testing</a></li>
+      <li><a href="#/guide/typescript">TypeScript Support</a></li>
+      <li><h3>Scaling Up</h3></li>
+      <li><a href="#/guide/routing">Routing</a></li>
+      <li><a href="#/guide/state-management">State Management</a></li>
+      <li><a href="#/guide/ssr">Server-Side Rendering</a></li>
+      <li><h3>Internals</h3></li>
+      <li><a href="#/guide/reactivity">Reactivity in Depth</a></li>
+      <li><h3>Migrating</h3></li>
+      <li><a href="#/guide/migration">Migration from Vue 1.x</a></li>
+      <li><a href="#/guide/migration-vue-router">Migration from Vue Router 0.7.x</a></li>
+      <li><a href="#/guide/migration-vuex">Migration from Vuex 0.6.x to 1.0</a></li>
+      <li><h3>Meta</h3></li>
+      <li><a href="#/guide/comparison">Comparison with Other Frameworks</a></li>
+      <li><a href="#/guide/join">Join the Vue.js Community!</a></li>
+      <li><a href="#/guide/team">Meet the Team</a></li>
+      <!-- poisonous?! -->
+      <li><h2>API</h2></li>
+      <li><a href="#/api/index">API</a></li>
+      <!-- ... -->
+      <li><h2>Style Guide</h2></li>
+      <li><a href="#/style-guide/index">Style Guide</a></li>
+      <li><h2>Cookbook</h2></li>
+      <li><a href="#/cookbook/index">Introduction</a></li>
+      <li><a href="#/cookbook/adding-instance-properties">Adding Instance Properties</a></li>
+      <li><a href="#/cookbook/form-validation">Form Validation</a></li>
+      <li><a href="#/cookbook/editable-svg-icons">Editable SVG Icon Systems</a></li>
+      <li><a href="#/cookbook/serverless-blog">Create a CMS-Powered Blog</a></li>
+      <li><a href="#/cookbook/unit-testing-vue-components">Unit Testing Vue Components</a></li>
+      <li><a href="#/cookbook/creating-custom-scroll-directives">Creating Custom Scroll Directives</a></li>
+      <li><a href="#/cookbook/debugging-in-vscode">Debugging in VS Code and Chrome</a></li>
+      <li><a href="#/cookbook/using-axios-to-consume-apis">Using Axios to Consume APIs</a></li>
+      <li><a href="#/cookbook/avoiding-memory-leaks">Avoiding Memory Leaks</a></li>
+      <li><a href="#/cookbook/client-side-storage">Client-Side Storage</a></li>
+      <li><a href="#/cookbook/packaging-sfc-for-npm">Packaging Vue Components for npm</a></li>
+      <li><a href="#/cookbook/dockerize-vuejs-app">Dockerize Vue.js App</a></li>
+    </ul>
+  </nav>
+  <article id="content" class="content md-github"></article>
+</div>
+
+<script src="https://cdn.bootcss.com/marked/0.4.0/marked.min.js"></script>
+<script src="https://cdn.bootcss.com/es6-promise/4.1.1/es6-promise.min.js"></script>
+<script src="https://cdn.bootcss.com/fetch/2.0.4/fetch.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+
+<script>
+window.config = {
+  url: 'https://github.com/vuejs/vuejs.org',
+  branch: 'master',
+  rootPath: '/src/v2',
+  defaultPage: '/guide/index',
+  cache: 1,
+  assetPath: '/src',
+  scripts: true,
+  scriptOutRaw: false,
+  highlight: true,
+  filterRAW: function (str, uri) {
+    if (uri === '/guide/team') {
+      window._TEAM = str;
+      return '';
+    }
+
+    return str;
+  },
+  filterHTML: function (str, uri) {
+    if (uri === '/guide/team') {
+      return window._TEAM;
+    }
+    str = str.replace(/<p class="([^"]+)">(.+?)<\/p>/g, function (a, b, c) {
+      return marked(c).replace('<p>', '<p class="' + b + '">');
+    });
+
+    // inner anchor
+    str = str.replace(/<a href="#(.+?)">/g, function (a, b) {
+      return '<a href="#' + uri + '#' + b.toLowerCase() + '">';
+    });
+
+    str = str.replace(/<a href="(?:(?!https?:\/\/)([^./].+?)(?:\.html))">(.+?)<\/a>/g, function (a, b, c) {
+      return '<a href="#/guide/' + b + '">' + c + '</a>';
+    });
+    // relative anchor
+    str = str.replace(/<a href="..(\/.+?)(?:\.html)?(?:#(.+?))?">/g, function (a, b, c) {
+      var hash = c ? '#' + c.toLowerCase() : '';
+      var path = b[b.length - 1] ==='/' ? b + 'index': b;
+      var uri = path + hash;
+      // fix links
+      if (uri === '/guide/components#props') {
+        uri = '/guide/components#passing-data-to-child-components-with-props'
+      }
+      if (uri === '/guide/components#sync-modifier') {
+        uri = '/guide/components-custom-events#-sync-modifier';
+      }
+      return '<a href="#' + uri + '">';
+    });
+    return str;
+  }
+};
+</script>
+
+<script src="./assets/docs.js"></script>
+
+</body>
+</html>
