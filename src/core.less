@@ -1,0 +1,38 @@
+.box {
+  max-width: 1200px; margin: 0 auto;
+}
+nav, article {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 3px;
+  background: #fff;
+}
+nav {
+  margin-right: 10px;
+  .on {
+    color: #111;
+    font-weight: bold;
+    font-style: italic;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+article {
+  flex: 1;
+  max-width: 932px;
+}
+#main {
+  display: flex;
+}
+#menu {
+  /* position: sticky; */
+  top: 5px;
+  margin: 10px 0px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 14px;
+  li {
+    width: 240px;
+  }
+}
