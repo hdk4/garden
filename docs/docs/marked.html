@@ -91,11 +91,15 @@ window.config = {
   filterHTML: function (str, uri) {
 
     // fix link
-    str = str.replace(/<a href="([^#].+?)">/g, function (a, b) {
+    str = str.replace(/<a href="(?!https?:\/\/)(?!mailto)([^#].+?)">/g, function (a, b) {
       if (b === './demo/') {
         return '<a href="https://marked.js.org/demo/" target="_blank">';
       }
       return '<a href="#/' + b.replace('.md', '') + '">';
+    });
+
+    str = str.replace(/<a href="#([^/].+?)">/g, function (a, b) {
+      return '<a href="#' + uri + '#' + b.toLowerCase() + '">';
     });
 
     return str;
