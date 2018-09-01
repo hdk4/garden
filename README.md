@@ -51,6 +51,7 @@ window.config = {
 - [marked.js](https://hdk4.com/garden/docs/marked.html)
 - [vue 2.x](https://hdk4.com/garden/docs/vue.html)
 - [vue 2.x - 中文版](https://hdk4.com/garden/docs/vue_zh.html)，因链接中存在中文未转义或翻译不同步的问题，部分链接跳转可能会失效，建议翻阅上面的英文版。
+- [less.js](https://hdk4.com/garden/docs/less.html)
 
 ### Special thanks to
 
@@ -58,3 +59,4 @@ window.config = {
 - [Less-To-CSS Playground](http://lesscss.org/less-preview/).
 - [`primer`](https://github.com/primer/primer).
 - [BootCDN](https://www.bootcdn.cn/).
+- [PLACEHOLDER.COM](https://placeholder.com).
