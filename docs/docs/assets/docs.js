@@ -31,9 +31,11 @@
     throw new Error('`config.url` is required!')
   }
 
+  var windowHeight = window.innerHeight || document.documentElement.offsetHeight || document.body.offsetHeight;
+  var windowWidth = window.innerWidth || document.documentElement.offsetWidth || document.body.offsetWidth;
+
   // set height
   (function () {
-    var windowHeight = window.innerHeight || document.documentElement.offsetHeight || document.body.offsetHeight;
     var $temp = document.getElementById('main').children;
     var height = (windowHeight - 100) + 'px';
     for (var i = 0; i < $temp.length; i++) {
@@ -95,6 +97,10 @@
       if ($anchor) {
         $anchor.scrollIntoView();
       }
+    }
+
+    if (windowWidth <= 800) {
+      $menu.className = 'hide';
     }
   }
 
