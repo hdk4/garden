@@ -1,13 +1,8 @@
-#menu {
-  position: static;
-}
-#menu > li {
-  width: 240px;
-}
-article {
-  /* fix `guide/transition` */
+
+/* fix `guide/transition` */
+/* article {
   max-width: 932px;
-}
+} */
 .demo {
   border: 1px solid #eee;
   border-radius: 2px;
@@ -265,6 +260,11 @@ article {
   }
 }
 
+#team-members .vuer footer {
+  position: static;
+  text-align: left;
+}
+
 .md-vue .style-example,
 .md-vue details,
 .md-vue .style-enforcement {
@@ -355,7 +355,7 @@ article {
   font-size: 0.7em;
   margin-left: 1em;
   pointer-events: all;
-  position: absolute;
+  /* position: absolute; */
 }
 .md-vue [data-p="a"] {
   color: #6b2a2a;
