@@ -70,7 +70,7 @@ nav .on:hover {
   font-size: 12px;
   text-transform: uppercase;
 }
-#expand ::after {
+#expand::after {
   content: '';
   position: absolute;
   top: 20px;
@@ -80,7 +80,7 @@ nav .on:hover {
   height: 2px;
   background: #222;
 }
-#expand ::before {
+#expand::before {
   content: '';
   position: absolute;
   top: 25px;
@@ -110,7 +110,7 @@ nav .on:hover {
     top: 120px;
     display: none;
   }
-  nav .show {
+  nav.show {
     display: block;
   }
   footer {
