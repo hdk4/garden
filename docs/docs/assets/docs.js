@@ -31,6 +31,25 @@
     throw new Error('`config.url` is required!')
   }
 
+  // set height
+  (function () {
+    var windowHeight = window.innerHeight || document.documentElement.offsetHeight || document.body.offsetHeight;
+    var $temp = document.getElementById('main').children;
+    var height = (windowHeight - 100) + 'px';
+    for (var i = 0; i < $temp.length; i++) {
+      $temp[i].style.height = height;
+    }
+  })();
+
+  // ***
+  var $menu = document.getElementById('menu');
+  var $expand = document.getElementById('expand');
+
+  $expand.onclick = function () {
+    var isShow = $menu.className === 'show';
+    $menu.className = isShow ? 'hide' : 'show';
+  };
+
   var _repo = config.url.split('/');
   config.owner = _repo[3];
   config.repo = _repo[4];
@@ -53,6 +72,8 @@
   var curPage = '';
   var curAnchor = '';
 
+  var isPageChange = false;
+
   function setAnchor() {
     $navs.forEach(function (item) {
       var curHref = item.getAttribute('href');
@@ -61,9 +82,13 @@
         isOn = true;
       }
       item.className = isOn ? 'on' : '';
+      if (isOn && isPageChange) {
+        isPageChange = false;
+        item.scrollIntoView()
+      }
     });
 
-    window.scrollTo(0, 0);
+    $content.scrollTo(0, 0);
 
     if (curPage && curAnchor) {
       var $anchor = document.getElementById(curAnchor);
@@ -87,12 +112,14 @@
       return;
     }
 
+    isPageChange = true;
+
     curPage = uri;
 
     fetchContent(uri).then(function (content) {
       var raw = decodeURIComponent(escape(window.atob(content)));
 
-      raw = raw.replace(/^(-+)(\n.+)+?(-+)/, ''); // remove front-matter
+      raw = raw.replace(/^(-{3,} *)\n((?:.*\n)+?)\1/, ''); // remove front-matter
 
       var scriptInline = [];
       var scriptLink = [];
