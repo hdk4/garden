@@ -1,14 +1,38 @@
-.box {
-  max-width: 1200px; margin: 0 auto 1em;
+body {
+  margin: 0;
 }
-nav, article {
+.box {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+header {
+  height: 60px; line-height: 60px;
+  font-size: 2em;
+  font-weight: bold;
+}
+footer {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 40px; line-height: 40px;
+  text-align: right;
+}
+nav,
+article {
   border: 1px solid #ddd;
-  padding: 8px;
   border-radius: 3px;
   background: #fff;
+  overflow: auto;
+}
+article {
+  padding: 10px;
+  margin-left: 260px;
+  flex: 1;
 }
 nav {
   margin-right: 10px;
+  width: 250px;
+  position: fixed;
   .on {
     color: #111;
     font-weight: bold;
@@ -18,22 +42,76 @@ nav {
     }
   }
 }
-article {
-  flex: 1;
-}
 #main {
   display: flex;
 }
-#menu {
-  position: sticky;
-  top: 5px;
-  margin: 10px 0px;
-  padding: 0;
+#menu > ul {
+  padding: 10px;
   list-style-type: none;
   font-size: 14px;
-  > li {
-    > ul {
-      padding-left: 2em;
+  > li > ul {
+    padding-left: 2em;
+  }
+}
+#expand {
+  display: none;
+  height: 10px;
+  cursor: pointer;
+  z-index: 999999;
+  position: fixed;
+  top: 70px;
+  right: 18px;
+  padding: 24px;
+  color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  ::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: block;
+    width: 15px;
+    height: 2px;
+    background: #222;
+  }
+  ::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    display: block;
+    width: 15px;
+    height: 3px;
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    margin: 0 8px;
+  }
+  #main,
+  #expand {
+    display: block;
+  }
+  article {
+    margin: 0;
+    height: auto!important;
+  }
+  nav {
+    max-height: 300px;
+    margin-right: 8px;
+    right: 10px;
+    top: 120px;
+    display: none;
+    .show {
+      display: block;
     }
+  }
+  footer {
+    position: static;
   }
 }
