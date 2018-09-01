@@ -100,7 +100,7 @@
     }
 
     if (windowWidth <= 800) {
-      $menu.className === 'hide';
+      $menu.className = 'hide';
     }
   }
 

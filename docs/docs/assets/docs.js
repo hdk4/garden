@@ -125,7 +125,9 @@
     fetchContent(uri).then(function (content) {
       var raw = decodeURIComponent(escape(window.atob(content)));
 
-      raw = raw.replace(/^(-{3,} *)\n((?:.*\n)+?)\1/, ''); // remove front-matter
+      // remove front-matter
+      // https://github.com/jxson/front-matter/blob/master/index.js#L3
+      raw = raw.replace(/^(\ufeff?(= yaml =|---)$([\s\S]*?)^(?:\2|\.\.\.)$(?:\n)?)/m, '');
 
       var scriptInline = [];
       var scriptLink = [];
