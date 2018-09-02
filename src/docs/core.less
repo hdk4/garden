@@ -59,7 +59,7 @@ nav {
   cursor: pointer;
   z-index: 999999;
   position: fixed;
-  top: 70px;
+  top: 20px;
   right: 18px;
   padding: 24px;
   color: transparent;
@@ -111,13 +111,17 @@ nav {
     max-height: 300px;
     margin-right: 8px;
     right: 10px;
-    top: 120px;
+    top: 70px;
     display: none;
+    z-index: 9999999;
     &.show {
       display: block;
     }
   }
   footer {
     position: static;
+  }
+  .github-corner svg {
+    width: 50px; height: 50px;
   }
 }
