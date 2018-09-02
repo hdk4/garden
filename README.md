@@ -8,6 +8,8 @@
 
 ## Docs
 
+> Fetch the documentation files from `GitHub` and then render them.
+
 ### Depends
 
 - [`marked`](https://github.com/markedjs/marked), render `.md` files.
@@ -16,7 +18,7 @@
 - [`highlight.js`](https://github.com/highlightjs/highlight.js), syntax highlighter.
 - [atob](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/atob), decode. Use [a polyfill](https://github.com/davidchambers/Base64.js) if necessary.
 
-### config
+### Config
 
 ```js
 window.config = {
@@ -30,7 +32,8 @@ window.config = {
   cache: 1,
   scripts: true,
   filterRAW: null,
-  filterHTML: null
+  filterHTML: null,
+  onReady: null
 };
 ```
 
@@ -45,13 +48,16 @@ window.config = {
 - `scripts`, enable scripts between `{% raw %}` and `{% endraw %}`.
 - `filterRAW`, _function_, filter the raw text before `marked` executes. It's will have two params `raw` and `uri`, `raw` is the text while `uri` is current page path that fetched from `GitHub` just now.
 - `filterHTML`, _function_, filter the html content before set it to `content` to render. It's will have two params `html` and `uri`, likewise, `html` is the html content and `uri` is similar to `uri` in `filterRAW`.
+- `onReady`, _function_, excute while the job is done.
 
-### Current Docs
+### Current docs
 
 - [marked.js](https://hdk4.com/garden/docs/marked.html)
-- [vue 2.x](https://hdk4.com/garden/docs/vue.html)
-- [vue 2.x - 中文版](https://hdk4.com/garden/docs/vue_zh.html)，因链接中存在中文未转义或翻译不同步的问题，部分链接跳转可能会失效，建议翻阅上面的英文版。
+- [vue 2.x](https://hdk4.com/garden/docs/vue.html), [Chinese](https://hdk4.com/garden/docs/vue_zh.html)
 - [less.js](https://hdk4.com/garden/docs/less.html)
+- [pug](https://hdk4.com/garden/docs/pug.html), [Chinese](https://hdk4.com/garden/docs/pug_zh.html)
+
+> Caution: While using Chinese, due to the encode/decode problems, some links maybe **invalid**. There is no plans to fixed it, just visit the English documentation alternatively.
 
 ### Special thanks to
 
