@@ -92,15 +92,16 @@
 
     $content.scrollTo(0, 0);
 
+    if (windowWidth <= 800) {
+      $menu.className = 'hide';
+      window.scrollTo(0, 0);
+    }
+
     if (curPage && curAnchor) {
       var $anchor = document.getElementById(curAnchor);
       if ($anchor) {
         $anchor.scrollIntoView();
       }
-    }
-
-    if (windowWidth <= 800) {
-      $menu.className = 'hide';
     }
   }
 
