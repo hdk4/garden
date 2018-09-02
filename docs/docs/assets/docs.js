@@ -208,6 +208,10 @@
         }
       }
 
+      if (config.onReady) {
+        config.onReady(html, uri);
+      }
+
       setAnchor();
     })
 
