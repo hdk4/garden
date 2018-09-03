@@ -28,7 +28,7 @@
   }
 
   if (!window.config || !config.url) {
-    throw new Error('`config.url` is required!')
+    throw new Error('`config.url` is required!');
   }
 
   var windowHeight = window.innerHeight || document.documentElement.offsetHeight || document.body.offsetHeight;
@@ -61,15 +61,15 @@
   config.rootPath = config.rootPath || '/';
   config.assetPath = config.assetPath || '/';
   config.defaultPage = config.defaultPage || '/README';
+  config.cacheNS = config.cacheNS || '__';
 
   if (config.cache) {
     config.cacheType = config.cache === 1 ? 'sessionStorage' : 'localStorage';
-    config.cacheRoot = '__' + config.owner + '/' + config.repo;
+    config.cacheRoot = config.cacheNS + ':' + config.owner + '/' + config.repo;
   }
 
   var $content = document.getElementById('content');
-  var $navs = document.querySelectorAll('#menu a');
-  var $head = document.getElementsByTagName('head')[0];
+  var $navs = $menu.querySelectorAll('a');
 
   var curPage = '';
   var curAnchor = '';
@@ -126,34 +126,11 @@
     fetchContent(uri).then(function (content) {
       var raw = decodeURIComponent(escape(window.atob(content)));
 
-      // remove front-matter
-      // https://github.com/jxson/front-matter/blob/master/index.js#L3
-      raw = raw.replace(/^(\ufeff?(= yaml =|---)$([\s\S]*?)^(?:\2|\.\.\.)$(?:\n)?)/m, '');
-
-      var scriptInline = [];
-      var scriptLink = [];
-
-      // remove inline raw content
-      raw = raw.replace(/\{% *raw *%\}(.+?)\{% *endraw *%\}/g, function (a, b, c) {
-        return b + '\n';
-      });
-      // remove block raw content
-      raw = raw.replace(/\{% *raw *%\} *\n((?:.*\n)+?)\ *{% *endraw *%\}/g, function (a, b, c) {
-        if (config.scripts) {
-          b = b.replace(/<script>\n(.+|\n)+?<\/script>/g, function (item) {
-            scriptInline.push(item.replace('<script>', '').replace('</script>', ''));
-            return '';
-          });
-          b = b.replace(/<script .*?src="(.+?)".*?><\/script>/g, function (a, b) {
-            // Guarantee each scripts link is unique.
-            if (scriptLink.indexOf(b) === -1) {
-              scriptLink.push(b);
-            }
-            return '';
-          });
-        }
-        return b + '\n';
-      });
+      if (!config.keepFrontMatter) {
+        // remove front-matter
+        // https://github.com/jxson/front-matter/blob/master/index.js#L3
+        raw = raw.replace(/^(\ufeff?(= yaml =|---)$([\s\S]*?)^(?:\2|\.\.\.)$(?:\n)?)/m, '');
+      }
 
       if (config.filterRAW) {
         raw = config.filterRAW(raw, uri);
@@ -162,9 +139,24 @@
       var html = marked(raw, config.markedOptions || {});
 
       // replace asset path
-      html = html.replace(/src="((?!https?:\/\/).+?)"/g, function (a, b) {
+      html = html.replace(/src="((?!https?:\/\/|ftp\:\/\/).+?)"/g, function (a, b) {
         return 'src="' + fetchAssets(b) + '"';
       });
+
+      if (config.mapLink || config.filterLink) {
+        var mapLink = config.mapLink;
+        html = html.replace(/<a href="(?!https?:\/\/|mailto)(.+?)">/g, function (a, b) {
+          var link;
+          if (mapLink && (b in mapLink)) {
+            link = mapLink[b];
+          } else if (config.filterLink) {
+            link = config.filterLink(b, uri);
+          } else {
+            link = b;
+          }
+          return '<a href="' + link + '">';
+        });
+      }
 
       if (config.filterHTML) {
         html = config.filterHTML(html, uri);
@@ -172,41 +164,10 @@
 
       $content.innerHTML = html;
 
-      if (config.highlight) {
+      if (config.highlight && window.hljs) {
         $content.querySelectorAll('pre code[class]').forEach(function (item) {
           hljs.highlightBlock(item);
         });
-      }
-
-      if (config.scripts) {
-        console.log(scriptInline);
-        console.log(scriptLink);
-        if (scriptLink.length === 0) {
-          _evalScripts();
-        } else {
-          var count = 0;
-          scriptLink.forEach(function (src) {
-            var $script = document.createElement('script');
-            $script.src = src;
-            $script.onload = function () {
-              count++;
-              if (count === scriptLink.length) {
-                _evalScripts();
-              }
-            }
-            $head.appendChild($script);
-          });
-        }
-
-        function _evalScripts() {
-          scriptInline.forEach(function (script) {
-            try {
-              eval(script); // WARNING, make sure you know what you do.
-            } catch(e) {
-              console.error(e);
-            }
-          });
-        }
       }
 
       if (config.onReady) {
