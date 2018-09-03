@@ -61,11 +61,14 @@
   config.rootPath = config.rootPath || '/';
   config.assetPath = config.assetPath || '/';
   config.defaultPage = config.defaultPage || '/README';
-  config.cacheNS = config.cacheNS || '__';
+  config.cachePrefix = config.cachePrefix || '__';
+  if (typeof config.fileExt !== 'string') {
+    config.fileExt = '.md';
+  }
 
   if (config.cache) {
     config.cacheType = config.cache === 1 ? 'sessionStorage' : 'localStorage';
-    config.cacheRoot = config.cacheNS + ':' + config.owner + '/' + config.repo;
+    config.cacheRoot = config.cachePrefix + ':' + config.owner + '/' + config.repo;
   }
 
   var $content = document.getElementById('content');
@@ -181,8 +184,8 @@
 
   function fetchContent(filePath, force) {
     var url = 'https://api.github.com/repos/' + config.owner + '/' + config.repo + '/contents' + config.rootPath + filePath;
-    if (url.slice(url.length - 3).toLowerCase() !== '.md') {
-      url += '.md';
+    if (!/\.\w+$/.test(url)) {
+      url += config.fileExt;
     }
     url += '?ref=' + config.branch;
 
