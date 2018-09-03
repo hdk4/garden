@@ -89,21 +89,21 @@ window.config = {
   defaultPage: '/README',
   highlight: true,
   cache: 1,
-  filterHTML: function (str, uri) {
-
-    // fix link
-    str = str.replace(/<a href="(?!https?:\/\/)(?!mailto)([^#].+?)">/g, function (a, b) {
-      if (b === './demo/') {
-        return '<a href="https://marked.js.org/demo/" target="_blank">';
+  filterLink: function (link, uri) {
+    if (link === './demo/') {
+      return 'https://marked.js.org/demo/" target="_blank';
+    }
+    if (link[0] === '#') {
+      if (link[1] === '/') {
+        return link.replace('.md', '');
       }
-      return '<a href="#/' + b.replace('.md', '') + '">';
-    });
-
-    str = str.replace(/<a href="#([^/].+?)">/g, function (a, b) {
-      return '<a href="#' + uri + '#' + b.toLowerCase() + '">';
-    });
-
-    return str;
+      return '#' + uri + '#' + link.slice(1).replace('.md', '').toLowerCase();
+    }
+    return '#/' + link.replace('.md', '');
+  },
+  filterHTML: function (html, uri) {
+    html = html.replace('https://marked.js.org/#/USING_ADVANCED.md#options', '#/USING_ADVANCED#options');
+    return html;
   }
 };
 </script>

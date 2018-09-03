@@ -8,8 +8,9 @@
   <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pug</title>
-  <link href="./assets/core.css" rel="stylesheet">
   <link href="./assets/github.css" rel="stylesheet">
+  <link href="./assets/core.css" rel="stylesheet">
+
   <link href="./assets/pug.css" rel="stylesheet">
 
 </head>
@@ -97,6 +98,35 @@ window.config = {
   },
   highlight: true,
   cache: 1,
+  mapLink: {
+    '#pugcompilesource-options': '#/api/reference#pug-compile-source-options-',
+    '../language/filters.html#custom-filters': '#/language/filters#custom-filters',
+    '#options': '#/api/reference#options',
+    'reference.html#options': '#/api/reference#options',
+    '../language/mixins.html': '#/language/mixins',
+    '../language/attributes.html#attribute-interpolation': '#/language/attributes#attribute-interpolation',
+    '../language/doctype.html#doctype-shortcuts': '#/language/doctype#doctype-shortcuts',
+    '../language/tags.html#self-closing-tags': '#/language/tags#self-closing-tags',
+    '#compiler-lexer-parser': '#/api/migration-v2#options',
+    'reference.html#pugcompileclientsource-options': '#/api/reference#pug-compileclient-source-options-',
+    'plain-text.html#whitespace-control': '#/language/plain-text#whitespace-control',
+    '../api/migration-v2.html': '#/api/migration-v2',
+    'mixins.html#mixin-attributes': '#/language/mixins#mixin-attributes',
+    'plain-text.html': '#/language/plain-text',
+    'attributes.html#boolean-attributes': '#/language/attributes#boolean-attributes',
+    '../api/reference.html#options': '#/api/reference#options',
+    'attributes.html': '#/language/attributes',
+    '#custom-filters': '#/language/filters#custom-filters',
+    'includes.html#including-filtered-text': '#/language/includes#including-filtered-text',
+    'code.html#unbuffered-code': '#/language/code#unbuffered-code',
+    'comments.html': '#/language/comments',
+    'attributes.html#unescaped-attributes': '#/language/attributes#unescaped-attributes',
+    'attributes.html#attributes': '#/language/attributes#attributes',
+    'interpolation.html': '#/language/interpolation',
+    'comments.html#conditional-comments': '#/language/comments#conditional-comments',
+    'reference.html#pugcompilesource-options': '#/api/reference#pug-compile-source-options-',
+    '../language/doctype.html#doctype-option': '#/language/doctype#doctype-option'
+  },
   filterRAW: function (raw, uri) {
     // parameter-list
     raw = raw.replace(/(```+)parameter-list.*?\n([\s\S]*?)\1/g, function (a, b, c) {
@@ -128,39 +158,6 @@ window.config = {
     return raw;
   },
   filterHTML: function (html, uri) {
-    const mapLink = {
-      '#pugcompilesource-options': '#/api/reference#pug-compile-source-options-',
-      '../language/filters.html#custom-filters': '#/language/filters#custom-filters',
-      '#options': '#/api/reference#options',
-      'reference.html#options': '#/api/reference#options',
-      '../language/mixins.html': '#/language/mixins',
-      '../language/attributes.html#attribute-interpolation': '#/language/attributes#attribute-interpolation',
-      '../language/doctype.html#doctype-shortcuts': '#/language/doctype#doctype-shortcuts',
-      '../language/tags.html#self-closing-tags': '#/language/tags#self-closing-tags',
-      '#compiler-lexer-parser': '#/api/migration-v2#options',
-      'reference.html#pugcompileclientsource-options': '#/api/reference#pug-compileclient-source-options-',
-      'plain-text.html#whitespace-control': '#/language/plain-text#whitespace-control',
-      '../api/migration-v2.html': '#/api/migration-v2',
-      'mixins.html#mixin-attributes': '#/language/mixins#mixin-attributes',
-      'plain-text.html': '#/language/plain-text',
-      'attributes.html#boolean-attributes': '#/language/attributes#boolean-attributes',
-      '../api/reference.html#options': '#/api/reference#options',
-      'attributes.html': '#/language/attributes',
-      '#custom-filters': '#/language/filters#custom-filters',
-      'includes.html#including-filtered-text': '#/language/includes#including-filtered-text',
-      'code.html#unbuffered-code': '#/language/code#unbuffered-code',
-      'comments.html': '#/language/comments',
-      'attributes.html#unescaped-attributes': '#/language/attributes#unescaped-attributes',
-      'attributes.html#attributes': '#/language/attributes#attributes',
-      'interpolation.html': '#/language/interpolation',
-      'comments.html#conditional-comments': '#/language/comments#conditional-comments',
-      'reference.html#pugcompilesource-options': '#/api/reference#pug-compile-source-options-',
-      '../language/doctype.html#doctype-option': '#/language/doctype#doctype-option'
-    };
-    html = html.replace(/<a href="(?!https?:\/\/)(?!mailto)(.+?)">/g, function (a, b) {
-      var link = b in mapLink ? mapLink[b] : b;
-      return '<a href="' + link + '">';
-    });
 
     html = html.replace(/<div id="_p(\d+)"><\/div>/g, function (a, b) {
       var n = +b - 1;

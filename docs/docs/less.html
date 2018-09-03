@@ -289,6 +289,43 @@ window.config = {
   markedOptions: null,
   highlight: true,
   cache: 1,
+  mapLink: {
+    '#command-line-usage': '#/usage/command-line-usage',
+    '#guis-for-less': '#/tools/guis-for-less',
+    '#mixins-feature-mixin-aliasing-feature': '#/features/mixins-aliasing',
+    '#import-options-inline': '#/features/imports#inline',
+    '#mixins-feature': '#/features/mixins',
+    '#features-overview-feature-media-query-bubbling-and-nested-media-queries': '#/features-overview#nested-at-rules-and-bubbling',
+    '/#overview': '#/features-overview',
+    '/usage': '#/usage/command-line-usage',
+    '/about/#ports': '#/tools/ports',
+    '#mixin-guards-feature': '#/features/mixin-guards',
+    '#mixins-parametric-feature-pattern-matching': '#/features/mixins-parametric#pattern-matching',
+    '#features-overview-feature-nested-rules': '#/features-overview#nesting',
+    '#variables-feature-lazy-loading': '#/features/variables#lazy-evaluation',
+    '#color-channel-luma': '#/functions/color-channel#luma',
+    '#misc-functions-unit': '#/functions/misc-functions#unit',
+    '#misc-functions-convert': '#/functions/misc-functions#convert',
+    '../features/#plugin-atrules-feature': '#/features/plugins',
+    '#less-options': '#/usage/less-options',
+    '../tools/#plugins': '#/tools/plugins',
+    '#/features/plugin-atrules-feature': '#/features/plugins',
+    '#plugins': '#/tools/plugins',
+    '#using-less-in-the-browser-fileasync': '#/usage/using-less-in-the-browser#fileasync',
+    '../tools/#guis-for-less': '#/tools/guis-for-less',
+    '../features/': '#/features/overview',
+    '../functions/': '#/functions/string-functions',
+    '../usage/': '#/usage/command-line-usage',
+    '../tools/': '#/tools/frameworks-using-less',
+    '../features/#variables-feature': '#/features/variables',
+    '../features/#mixins-feature': '#/features/mixins',
+    '../features/#parent-selectors-feature': '#/features/parent-selectors',
+    '../functions/#color-operations': '#/functions/color-operations',
+    '../features/#variables-feature-variable-interpolation': '#/features/variables#variable-interpolation',
+    '../features/#maps-feature': '#/features/maps',
+    '../features/#variables-feature-lazy-loading': '#/features/variables#lazy-evaluation',
+    '../features/#imports-feature': '#/features/imports'
+  },
   filterRAW: function (raw, uri) {
     raw = raw.replace(/\{\{ *less\.master\.url *\}\}/g, 'https://github.com/less/less.js/blob/master/');
     raw = raw.replace(/\((holder[^)]+)\)/g, function (a, b) {
@@ -297,64 +334,9 @@ window.config = {
     return raw;
   },
   filterHTML: function (html, uri) {
-
-    const mapLink = {
-      '#command-line-usage': '#/usage/command-line-usage',
-      '#guis-for-less': '#/tools/guis-for-less',
-      '#mixins-feature-mixin-aliasing-feature': '#/features/mixins-aliasing',
-      '#import-options-inline': '#/features/imports#inline',
-      '#mixins-feature': '#/features/mixins',
-      '#features-overview-feature-media-query-bubbling-and-nested-media-queries': '#/features-overview#nested-at-rules-and-bubbling',
-      '/#overview': '#/features-overview',
-      '/usage': '#/usage/command-line-usage',
-      '/about/#ports': '#/tools/ports',
-      '#mixin-guards-feature': '#/features/mixin-guards',
-      '#mixins-parametric-feature-pattern-matching': '#/features/mixins-parametric#pattern-matching',
-      '#features-overview-feature-nested-rules': '#/features-overview#nesting',
-      '#variables-feature-lazy-loading': '#/features/variables#lazy-evaluation',
-      '#color-channel-luma': '#/functions/color-channel#luma',
-      '#misc-functions-unit': '#/functions/misc-functions#unit',
-      '#misc-functions-convert': '#/functions/misc-functions#convert',
-      '../features/#plugin-atrules-feature': '#/features/plugins',
-      '#less-options': '#/usage/less-options',
-      '../tools/#plugins': '#/tools/plugins',
-      '#/features/plugin-atrules-feature': '#/features/plugins',
-      '#plugins': '#/tools/plugins',
-      '#using-less-in-the-browser-fileasync': '#/usage/using-less-in-the-browser#fileasync',
-      '../tools/#guis-for-less': '#/tools/guis-for-less',
-      '../features/': '#/features/overview',
-      '../functions/': '#/functions/string-functions',
-      '../usage/': '#/usage/command-line-usage',
-      '../tools/': '#/tools/frameworks-using-less',
-      '../features/#variables-feature': '#/features/variables',
-      '../features/#mixins-feature': '#/features/mixins',
-      '../features/#parent-selectors-feature': '#/features/parent-selectors',
-      '../functions/#color-operations': '#/functions/color-operations',
-      '../features/#variables-feature-variable-interpolation': '#/features/variables#variable-interpolation',
-      '../features/#maps-feature': '#/features/maps',
-      '../features/#variables-feature-lazy-loading': '#/features/variables#lazy-evaluation',
-      '../features/#imports-feature': '#/features/imports'
-    };
-
-    html = html.replace(/<a href="(?!https?:\/\/)(?!mailto:)((\.\..+?)|(#.+?)|([/].+?))">/g, function (all, link, relativeLink, innerLink, specLink) {
-      var ret = '';
-      if (relativeLink) {
-        ret = relativeLink;
-      } else if (innerLink) {
-        ret = innerLink;
-      } else {
-        ret = specLink;
-      }
-      if (link in mapLink) {
-        ret = mapLink[ret];
-      }
-      return '<a href="' + ret + '">';
-    });
-
     html = html.replace(/src="https:\/\/hdk4\.com\/\?holder\.js\/([^/]+)\/#(.+?):#(.+?)\/text:(.+?)"/g, function (a, size, bg, color, text) {
       return 'src="https://via.placeholder.com/' + size + '/' + bg + '/' + color + '?text=' + text + '"';
     });
-
     return html;
   }
 };

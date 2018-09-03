@@ -265,6 +265,46 @@
   text-align: left;
 }
 
+.rotating-clockwise {
+  animation: 3s rotating-clockwise linear infinite;
+}
+i.rotating-clockwise {
+  display: inline-block;
+  animation-duration: 2s;
+}
+@-moz-keyframes rotating-clockwise {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotating-clockwise {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotating-clockwise {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating-clockwise {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .md-vue .style-example,
 .md-vue details,
 .md-vue .style-enforcement {

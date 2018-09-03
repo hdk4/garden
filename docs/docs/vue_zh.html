@@ -71,10 +71,8 @@
       <li><a href="#/guide/comparison">Comparison with Other Frameworks</a></li>
       <li><a href="#/guide/join">Join the Vue.js Community!</a></li>
       <li><a href="#/guide/team">Meet the Team</a></li>
-      <!-- poisonous?! -->
       <li><h2>API</h2></li>
       <li><a href="#/api/index">API</a></li>
-      <!-- ... -->
       <li><h2>Style Guide</h2></li>
       <li><a href="#/style-guide/index">Style Guide</a></li>
       <li><h2>Cookbook</h2></li>
@@ -116,6 +114,11 @@
 <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
 
 <script>
+
+window.scriptInline = [];
+window.scriptLink = [];
+window._raw = [];
+
 window.config = {
   url: 'https://github.com/vuejs/cn.vuejs.org',
   branch: 'master',
@@ -123,35 +126,53 @@ window.config = {
   defaultPage: '/guide/index',
   cache: 1,
   assetPath: '/src',
-  scripts: true,
-  scriptOutRaw: false,
   highlight: true,
-  filterRAW: function (str, uri) {
-    if (uri === '/guide/team') {
-      window._TEAM = str;
-      return '';
-    }
+  filterRAW: function (raw, uri) {
+    // remove inline raw content
+    raw = raw.replace(/\{% *raw *%\}(.+?)\{% *endraw *%\}/g, function (a, b, c) {
+      _raw.push(b);
+      return '<div id="_raw' + _raw.length + '"></div>\n';
+    });
+    // remove block raw content
+    raw = raw.replace(/\{% *raw *%\} *\n((?:.*\n)+?)\ *{% *endraw *%\}/g, function (a, b, c) {
+      b = b.replace(/<script>\n(.+|\n)+?<\/script>/g, function (item) {
+        scriptInline.push(item.replace(/<\/?script>/g, ''));
+        return '';
+      });
+      b = b.replace(/<script .*?src="(.+?)".*?><\/script>/g, function (a, b) {
+        // Guarantee each scripts link is unique.
+        if (scriptLink.indexOf(b) === -1) {
+          scriptLink.push(b);
+        }
+        return '';
+      });
+      _raw.push(b);
+      return '<div id="_raw' + _raw.length + '"></div>';
+    });
 
-    return str;
+    return raw;
   },
-  filterHTML: function (str, uri) {
-    if (uri === '/guide/team') {
-      return window._TEAM;
-    }
-    str = str.replace(/<p class="([^"]+)">(.+?)<\/p>/g, function (a, b, c) {
+  filterHTML: function (html, uri) {
+    // restore the raw contents
+    html = html.replace(/<div id="_raw(\d+)"><\/div>/g, function (a, b) {
+      var n = +b - 1;
+      return _raw[n];
+    });
+
+    html = html.replace(/<p class="([^"]+)">(.+?)<\/p>/g, function (a, b, c) {
       return marked(c).replace('<p>', '<p class="' + b + '">');
     });
 
     // inner anchor
-    str = str.replace(/<a href="#(.+?)">/g, function (a, b) {
+    html = html.replace(/<a href="#(.+?)">/g, function (a, b) {
       return '<a href="#' + uri + '#' + b.toLowerCase() + '">';
     });
 
-    str = str.replace(/<a href="(?:(?!https?:\/\/)([^./].+?)(?:\.html))">(.+?)<\/a>/g, function (a, b, c) {
+    html = html.replace(/<a href="(?:(?!https?:\/\/)([^./].+?)(?:\.html))">(.+?)<\/a>/g, function (a, b, c) {
       return '<a href="#/guide/' + b + '">' + c + '</a>';
     });
     // relative anchor
-    str = str.replace(/<a href="..(\/.+?)(?:\.html)?(?:#(.+?))?">/g, function (a, b, c) {
+    html = html.replace(/<a href="..(\/.+?)(?:\.html)?(?:#(.+?))?">/g, function (a, b, c) {
       var hash = c ? '#' + c.toLowerCase() : '';
       var path = b[b.length - 1] ==='/' ? b + 'index': b;
       var uri = path + hash;
@@ -164,7 +185,37 @@ window.config = {
       }
       return '<a href="#' + uri + '">';
     });
-    return str;
+
+    return html;
+  },
+  onReady: function () {
+    console.log(scriptInline);
+    console.log(scriptLink);
+    var $head = document.getElementsByTagName('head')[0];
+    if (scriptLink.length === 0) {
+      _evalInlineScripts();
+    } else {
+      var count = 0;
+      scriptLink.forEach(function (src) {
+        var $script = document.createElement('script');
+        $script.src = src;
+        $script.onload = function () {
+          count++;
+          if (count === scriptLink.length) {
+            _evalInlineScripts();
+          }
+        }
+        $head.appendChild($script);
+      });
+    }
+
+    function _evalInlineScripts() {
+      scriptInline.forEach(function (script) {
+        var $script = document.createElement('script');
+        $script.innerHTML = script;
+        $head.appendChild($script);
+      });
+    }
   }
 };
 </script>
