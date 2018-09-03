@@ -30,7 +30,10 @@ window.config = {
   markedOptions: null,
   highlight: true,
   cache: 1,
-  scripts: true,
+  cachePrefix: '__',
+  keepFrontMatter: false,
+  mapLink: null,
+  filterLink: null,
   filterRAW: null,
   filterHTML: null,
   onReady: null
@@ -42,12 +45,17 @@ window.config = {
 - `rootPath`, the root path for all file to fetch. Default to `/`.
 - `assetPath`, when using inner assets, this param can be useful. Default to `/`.
 - `defaultPage`, the default page to visit without an available hash. Default to `/README`.
+- `fileExt`, if the file does not have a file extension, append this to it. Default to `.md`, **if it not a string**.
 - `markedOptions`, _object_, [options](https://hdk4.com/garden/docs/marked.html#/USING_ADVANCED#options) for `marked`.
 - `highlight`, set a truthy value to use highlight for code block within `highlight.js`.
 - `cache`, use `Storage` to cache request results or not. Set a falsy value to disable it, set number `1` to use `sesstionStorage`, otherwise `localStorage`.
-- `scripts`, enable scripts between `{% raw %}` and `{% endraw %}`.
+- `cachePrefix`, available only when `cache` is a truthy value. Cache name's prefix for `Storage`. Default to `__`.
+- `keepFrontMatter`, set this to `true` to avoid remove the front-matter content.
+- ~~`scripts`, enable scripts between `{% raw %}` and `{% endraw %}`.~~ It has been removed yet.
+- `mapLink`, __object_, a map data for inner link.
 - `filterRAW`, _function_, filter the raw text before `marked` executes. It's will have two params `raw` and `uri`, `raw` is the text while `uri` is current page path that fetched from `GitHub` just now.
 - `filterHTML`, _function_, filter the html content before set it to `content` to render. It's will have two params `html` and `uri`, likewise, `html` is the html content and `uri` is similar to `uri` in `filterRAW`.
+- `filterLink`, _function_, filter the inner link. It's will have two params `link` and `uri`, `link` is the `href` value from `<a>`; for `uri`, see above.
 - `onReady`, _function_, excute while the job is done.
 
 ### Current docs
