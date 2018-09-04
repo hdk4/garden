@@ -135,8 +135,8 @@
         raw = raw.replace(/^(\ufeff?(= yaml =|---)$([\s\S]*?)^(?:\2|\.\.\.)$(?:\n)?)/m, '');
       }
 
-      if (config.filterRAW) {
-        raw = config.filterRAW(raw, uri);
+      if (config.filterRaw) {
+        raw = config.filterRaw(raw, uri);
       }
 
       var html = marked(raw, config.markedOptions || {});

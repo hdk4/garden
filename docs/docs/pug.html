@@ -127,7 +127,7 @@ window.config = {
     'reference.html#pugcompilesource-options': '#/api/reference#pug-compile-source-options-',
     '../language/doctype.html#doctype-option': '#/language/doctype#doctype-option'
   },
-  filterRAW: function (raw, uri) {
+  filterRaw: function (raw, uri) {
     // parameter-list
     raw = raw.replace(/(```+)parameter-list.*?\n([\s\S]*?)\1/g, function (a, b, c) {
       var ret = '<dl class="parameter-list">';

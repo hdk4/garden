@@ -326,7 +326,7 @@ window.config = {
     '../features/#variables-feature-lazy-loading': '#/features/variables#lazy-evaluation',
     '../features/#imports-feature': '#/features/imports'
   },
-  filterRAW: function (raw, uri) {
+  filterRaw: function (raw, uri) {
     raw = raw.replace(/\{\{ *less\.master\.url *\}\}/g, 'https://github.com/less/less.js/blob/master/');
     raw = raw.replace(/\((holder[^)]+)\)/g, function (a, b) {
       return '(https://hdk4.com/?' + b + ')';

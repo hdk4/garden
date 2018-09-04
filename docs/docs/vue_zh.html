@@ -127,7 +127,7 @@ window.config = {
   cache: 1,
   assetPath: '/src',
   highlight: true,
-  filterRAW: function (raw, uri) {
+  filterRaw: function (raw, uri) {
     // remove inline raw content
     raw = raw.replace(/\{% *raw *%\}(.+?)\{% *endraw *%\}/g, function (a, b, c) {
       _raw.push(b);
