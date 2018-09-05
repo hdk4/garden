@@ -384,7 +384,7 @@ window.config = {
   branch: 'master',
   rootPath: '/src/content',
   assetPath: '/src/assets',
-  defaultPage: '/configuration/index',
+  defaultPage: '/index',
   fileExt: '.md',
   markedOptions: {
     renderer: renderer
@@ -428,6 +428,14 @@ window.config = {
       // ...
       return 'https://webpack.js.org/assets/awesome-badge.svg';
     }
+  },
+  filterRaw: function (raw, uri) {
+    if (uri === '/index') {
+      raw = raw.replace(/^(<div.*>)$/gm, function (a) {
+        return a + '\n\n';
+      });
+    }
+    return raw;
   }
 };
 </script>

@@ -57,6 +57,7 @@ window.config = {
 - [vue 2.x](https://hdk4.com/garden/docs/vue.html), [Chinese](https://hdk4.com/garden/docs/vue_zh.html)
 - [less.js](https://hdk4.com/garden/docs/less.html)
 - [pug](https://hdk4.com/garden/docs/pug.html), [Chinese](https://hdk4.com/garden/docs/pug_zh.html)
+- [webpack 4](https://hdk4.com/garden/docs/webpack.html)
 
 > Caution: While using Chinese, due to the encode/decode problems, some links maybe **invalid**. There is no plans to fixed it, just visit the English documentation alternatively.
 

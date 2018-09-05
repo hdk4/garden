@@ -22,6 +22,31 @@ a.icon-link::before {
   content: '§';
 }
 
+.splash__wrap:before, .splash__wrap:after {
+  content: " ";
+  display: table;
+}
+
+.splash__wrap:after {
+  clear: both;
+}
+
+.splash__left, .splash__right {
+  width: 100%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .splash__left, .splash__right {
+    width: 50%;
+    padding: 0 15px;
+  }
+}
+
+.splash__right {
+  margin-bottom: 1em;
+}
+
 .md-webpack details:focus, summary:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.03);
