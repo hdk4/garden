@@ -1,0 +1,116 @@
+nav h4 {
+  margin: 1em 0 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+nav li {
+  word-break: break-all;
+}
+
+a.icon-link {
+  display: inline-block;
+  margin-left: 10px;
+  color: #909090;
+}
+
+a.icon-link:hover {
+  color: #1a6bac;
+}
+
+a.icon-link::before {
+  content: '§';
+}
+
+.md-webpack details:focus, summary:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 2px;
+}
+.md-webpack summary {
+  position: relative;
+};
+.md-webpack details summary::-webkit-details-marker {
+  color: #8DD6F9;
+}
+
+.md-webpack summary::-webkit-details-marker {
+  display: none;
+}
+
+.md-webpack summary:after {
+  content: "+";
+  float: left;
+  position: absolute;
+  left: -2px;
+  text-align: center;
+  color: #1e78c2;
+}
+
+.md-webpack details[open] summary:after {
+  content: "-";
+}
+
+.md-webpack pre code a {
+  border-bottom: 1px dotted #175d96;
+}
+
+.md-webpack pre code .code-link {
+  position: relative;
+}
+
+.md-webpack pre code .code-link:hover {
+  color: #2186d8;
+}
+
+.md-webpack pre code, .md-webpack pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+.md-webpack p code, .md-webpack p tt {
+  max-width: 100%;
+  line-height: initial;
+  overflow: auto;
+  margin: 0;
+  vertical-align: middle;
+  white-space: normal;
+}
+
+.md-webpack span code, .md-webpack span tt {
+  white-space: pre-line;
+}
+
+.md-webpack blockquote.tip, .md-webpack blockquote.warning, .md-webpack blockquote.todo {
+  border-left: none;
+  border-radius: 3px;
+  padding: 0.75em 1em;
+}
+
+.md-webpack blockquote.tip .tip-content, .md-webpack blockquote.warning .tip-content, .md-webpack blockquote.todo .tip-content {
+  font-style: italic;
+}
+
+.md-webpack blockquote.tip code, .md-webpack blockquote.warning code, .md-webpack blockquote.todo code {
+  color: inherit;
+}
+
+.md-webpack blockquote.tip {
+  background-color: #eaf8ff;
+  color: #4e7182;
+}
+
+.md-webpack blockquote.warning {
+  background-color: #fdf5d8;
+  color: #716b53;
+}
+
+.md-webpack blockquote.todo {
+  background-color: #fbddcd;
+  color: #907a6e;
+}
+
+.md-webpack blockquote.todo .tip-content::before {
+  content: '[TODO]: ';
+  font-style: normal;
+}
