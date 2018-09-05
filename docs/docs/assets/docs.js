@@ -68,7 +68,7 @@
 
   if (config.cache) {
     config.cacheType = config.cache === 1 ? 'sessionStorage' : 'localStorage';
-    config.cacheRoot = config.cachePrefix + ':' + config.owner + '/' + config.repo;
+    config.cacheRoot = config.cachePrefix + config.branch + ':' + config.owner + '/' + config.repo;
   }
 
   var $content = document.getElementById('content');
