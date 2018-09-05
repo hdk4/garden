@@ -123,10 +123,9 @@ window.config = {
   url: 'https://github.com/vuejs/vuejs.org',
   branch: 'master',
   rootPath: '/src/v2',
+  assetPath: '/src',
   defaultPage: '/guide/index',
   cache: 1,
-  assetPath: '/src',
-  highlight: true,
   filterRaw: function (raw, uri) {
     // remove inline raw content
     raw = raw.replace(/\{% *raw *%\}(.+?)\{% *endraw *%\}/g, function (a, b, c) {

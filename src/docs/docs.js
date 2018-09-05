@@ -1,31 +1,42 @@
-;(function () {
 
-  // fix window.atob
-  // https://github.com/davidchambers/Base64.js
-  if (!window.atob) {
-    window.atob = function (input) {
-      var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-      var str = String(input).replace(/[=]+$/, ''); // #31: ExtendScript bad parse of /=
-      if (str.length % 4 == 1) {
-        throw new Error("'atob' failed: The string to be decoded is not correctly encoded.");
-      }
-      for (
-        // initialize result and counters
-        var bc = 0, bs, buffer, idx = 0, output = '';
-        // get next character
-        buffer = str.charAt(idx++);
-        // character found in table? initialize bit storage and add its ascii value;
-        ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
-          // and if not first of each 4 characters,
-          // convert the first 8 bits to one ascii character
-          bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
-      ) {
-        // try to find character in table (0-63, not found => -1)
-        buffer = chars.indexOf(buffer);
-      }
-      return output;
+// fix window.atob
+// https://github.com/davidchambers/Base64.js
+if (!window.atob) {
+  window.atob = function (input) {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    var str = String(input).replace(/[=]+$/, ''); // #31: ExtendScript bad parse of /=
+    if (str.length % 4 == 1) {
+      throw new Error("'atob' failed: The string to be decoded is not correctly encoded.");
     }
+    for (
+      // initialize result and counters
+      var bc = 0, bs, buffer, idx = 0, output = '';
+      // get next character
+      buffer = str.charAt(idx++);
+      // character found in table? initialize bit storage and add its ascii value;
+      ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
+        // and if not first of each 4 characters,
+        // convert the first 8 bits to one ascii character
+        bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
+    ) {
+      // try to find character in table (0-63, not found => -1)
+      buffer = chars.indexOf(buffer);
+    }
+    return output;
   }
+}
+
+// default highlighter
+marked.defaults.highlight = function (code, lang) {
+  try {
+    code = hljs.highlight(lang, code).value;
+  } catch(e) {
+    console.error(e);
+  }
+  return code;
+};
+
+;(function () {
 
   if (!window.config || !config.url) {
     throw new Error('`config.url` is required!');
@@ -159,12 +170,6 @@
       }
 
       $content.innerHTML = html;
-
-      if (config.highlight && window.hljs) {
-        $content.querySelectorAll('pre code[class]').forEach(function (item) {
-          hljs.highlightBlock(item);
-        });
-      }
 
       if (config.onReady) {
         config.onReady(html, uri);
