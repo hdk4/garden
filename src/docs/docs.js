@@ -143,21 +143,14 @@
 
       // replace asset path
       html = html.replace(/src="((?!https?:\/\/|ftp\:\/\/).+?)"/g, function (a, b) {
-        return 'src="' + fetchAssets(b) + '"';
+        var src = config.filterAsset && config.filterAsset(b, uri) || fetchAssets(b);
+        return 'src="' + src + '"';
       });
 
       if (config.mapLink || config.filterLink) {
-        var mapLink = config.mapLink;
-        html = html.replace(/<a href="(?!https?:\/\/|mailto)(.+?)">/g, function (a, b) {
-          var link;
-          if (mapLink && (b in mapLink)) {
-            link = mapLink[b];
-          } else if (config.filterLink) {
-            link = config.filterLink(b, uri);
-          } else {
-            link = b;
-          }
-          return '<a href="' + link + '">';
+        html = html.replace(/href="(?!https?:\/\/|mailto)(.+?)"/g, function (a, b) {
+          var link = config.mapLink && config.mapLink[b] || config.filterLink && config.filterLink(b, uri) || b;
+          return 'href="' + link + '"';
         });
       }
 
