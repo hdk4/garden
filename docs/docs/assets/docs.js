@@ -83,7 +83,6 @@ marked.defaults.highlight = function (code, lang) {
   }
 
   var $content = document.getElementById('content');
-  var $navs = $menu.querySelectorAll('a');
 
   var curPage = '';
   var curAnchor = '';
@@ -91,10 +90,15 @@ marked.defaults.highlight = function (code, lang) {
   var isPageChange = false;
 
   function setAnchor() {
+    var $navs = $menu.querySelectorAll('a');
     $navs.forEach(function (item) {
       var curHref = item.getAttribute('href');
       var isOn = false;
-      if (curHref === '#' + curPage || curHref === '#' + curPage + '#' + curAnchor) {
+      if (
+        curHref === '#' + curPage ||
+        curHref === '#' + curPage + '#' + curAnchor ||
+        (curPage === config.defaultPage && curHref === '#' + curAnchor)
+      ) {
         isOn = true;
       }
       item.className = isOn ? 'on' : '';
@@ -124,9 +128,15 @@ marked.defaults.highlight = function (code, lang) {
     if (!hash) {
       hash = config.defaultPage;
     }
-    var temp = hash.split('#');
-    var uri = temp[0];
-    curAnchor = temp[1] || '';
+
+    if (hash[0] === '/') {
+      var temp = hash.split('#');
+      var uri = temp[0];
+      curAnchor = temp[1] || '';
+    } else {
+      uri = config.defaultPage;
+      curAnchor = hash;
+    }
 
     if (curPage && curPage === uri) {
       setAnchor();
