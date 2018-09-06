@@ -58,6 +58,7 @@ window.config = {
 - [less.js](https://hdk4.com/garden/docs/less.html)
 - [pug](https://hdk4.com/garden/docs/pug.html), [Chinese](https://hdk4.com/garden/docs/pug_zh.html)
 - [webpack 4](https://hdk4.com/garden/docs/webpack.html)
+- [lodash v4.17.10](https://hdk4.com/garden/docs/lodash.html)
 
 > Caution: While using Chinese, due to the encode/decode problems, some links maybe **invalid**. There is no plans to fixed it, just visit the English documentation alternatively.
 
