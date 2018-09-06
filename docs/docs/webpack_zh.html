@@ -421,6 +421,9 @@ window.config = {
       }
       return '#' + temp.join('/');
     }
+    if (uri === '/configuration/index') {
+      return '#/configuration/' + link;
+    }
     return link;
   },
   filterAsset: function (src, uri) {
