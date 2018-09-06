@@ -57,6 +57,17 @@ nav .on:hover {
 #menu > ul > li > ul {
   padding-left: 2em;
 }
+#menu > .search {
+  padding: 10px;
+}
+#menu > .search > input {
+  width: 100%;
+  height: 2em;
+  padding: 0 .3em;
+}
+.hidden {
+  display: none!important;
+}
 #expand {
   display: none;
   height: 10px;
