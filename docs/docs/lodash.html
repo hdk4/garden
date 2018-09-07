@@ -61,11 +61,11 @@
 
 <script>
 window.config = {
-  url: 'https://github.com/hdk4/garden',
-  branch: 'master',
-  rootPath: '/.archive/md/lodash',
+  url: 'https://github.com/lodash/lodash',
+  branch: '4.17.10',
+  rootPath: '/doc',
   assetPath: '/',
-  defaultPage: '/doc-v4.17.10.md',
+  defaultPage: '/README',
   cache: 1,
   filterRaw: function (raw, uri) {
     raw = raw.replace('# <a href="https://lodash.com/">lodash</a> <span>v4.17.10</span>', '');
@@ -109,7 +109,7 @@ window.config = {
       $lis.forEach(function (elem) {
         var href = elem.getAttribute('href').toLowerCase();
         var name =(elem.textContent || elem.innerText).toLowerCase();
-        var on = href.indexOf(val) !== -1 || name.indexOf(val) !== -1;
+        var on = name.indexOf(val) !== -1;
         elem.parentNode.className = on ? '' : 'hidden';
       });
       $uls = $toc.querySelectorAll('ul');
