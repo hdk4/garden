@@ -67,7 +67,7 @@ a.icon-link::before {
   content: "+";
   float: left;
   position: absolute;
-  left: -2px;
+  left: -2px; top: 0;
   text-align: center;
   color: #1e78c2;
 }
