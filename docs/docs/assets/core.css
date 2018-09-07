@@ -77,7 +77,7 @@ nav .on:hover {
   right: 0;
   z-index: 999999;
   overflow: hidden;
-  background-color: rgba(255,255,255,.7);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 #loading::before {
   content: '';
@@ -163,7 +163,7 @@ nav .on:hover {
     right: 10px;
     top: 70px;
     display: none;
-    z-index: 9999999;
+    z-index: 999998;
   }
   nav.show {
     display: block;
