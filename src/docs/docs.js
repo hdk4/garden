@@ -67,6 +67,9 @@ marked.defaults.highlight = function (code, lang) {
   config.owner = _repo[3];
   config.repo = _repo[4];
 
+  var $loading = document.createElement('div');
+  $loading.id = 'loading';
+
   // defaults
   config.branch = config.branch || 'master';
   config.rootPath = config.rootPath || '/';
@@ -147,7 +150,12 @@ marked.defaults.highlight = function (code, lang) {
 
     curPage = uri;
 
+    document.body.appendChild($loading);
+
     fetchContent(uri).then(function (content) {
+
+      document.body.removeChild($loading);
+
       var raw = decodeURIComponent(escape(window.atob(content)));
 
       if (!config.keepFrontMatter) {
@@ -186,7 +194,10 @@ marked.defaults.highlight = function (code, lang) {
       }
 
       setAnchor();
-    })
+    }).catch(function (error) {
+      console.error(error);
+      document.body.removeChild($loading);
+    });
 
   }
 
