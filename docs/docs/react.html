@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta name="author" content="xovel">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>React</title>
+  <link href="./assets/core.css" rel="stylesheet">
+  <link href="./assets/github.css" rel="stylesheet">
+
+<style>
+.code-hl {
+  position: relative;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+.code-hl pre {
+  line-height: 20px;
+  background: none;
+  position: relative;
+  z-index: 2;
+}
+.code-hl-item {
+  position: absolute;
+  z-index: 1;
+  height: 20px; width: 100%;
+  background-color: rgba(0, 0, 0, .1);
+}
+</style>
+</head>
+<body>
+
+<header class="box">React</header>
+
+<div id="expand"></div>
+
+<div class="box" id="main">
+  <nav id="menu">
+    <ul>
+      <li><h3>Installation</h3></li>
+      <li><a href="#/docs/getting-started">Getting Started</a></li>
+      <li><a href="#/docs/add-react-to-a-website">Add React to a Website</a></li>
+      <li><a href="#/docs/create-a-new-react-app">Create a New React App</a></li>
+      <li><a href="#/docs/cdn-links">CDN Links</a></li>
+      <li><h3>Main Concepts</h3></li>
+      <li><a href="#/docs/hello-world">Hello World</a></li>
+      <li><a href="#/docs/introducing-jsx">Introducing JSX</a></li>
+      <li><a href="#/docs/rendering-elements">Rendering Elements</a></li>
+      <li><a href="#/docs/components-and-props">Components and Props</a></li>
+      <li><a href="#/docs/state-and-lifecycle">State and Lifecycle</a></li>
+      <li><a href="#/docs/handling-events">Handling Events</a></li>
+      <li><a href="#/docs/conditional-rendering">Conditional Rendering</a></li>
+      <li><a href="#/docs/lists-and-keys">Lists and Keys</a></li>
+      <li><a href="#/docs/forms">Forms</a></li>
+      <li><a href="#/docs/lifting-state-up">Lifting State Up</a></li>
+      <li><a href="#/docs/composition-vs-inheritance">Composition vs Inheritance</a></li>
+      <li><a href="#/docs/thinking-in-react">Thinking In React</a></li>
+      <li><h3>Advanced Guides</h3></li>
+      <li><a href="#/docs/accessibility">Accessibility</a></li>
+      <li><a href="#/docs/code-splitting">Code-Splitting</a></li>
+      <li><a href="#/docs/context">Context</a></li>
+      <li><a href="#/docs/error-boundaries">Error Boundaries</a></li>
+      <li><a href="#/docs/forwarding-refs">Forwarding Refs</a></li>
+      <li><a href="#/docs/fragments">Fragments</a></li>
+      <li><a href="#/docs/higher-order-components">Higher-Order Components</a></li>
+      <li><a href="#/docs/integrating-with-other-libraries">Integrating with Other Libraries</a></li>
+      <li><a href="#/docs/jsx-in-depth">JSX In Depth</a></li>
+      <li><a href="#/docs/optimizing-performance">Optimizing Performance</a></li>
+      <li><a href="#/docs/portals">Portals</a></li>
+      <li><a href="#/docs/react-without-es6">React Without ES6</a></li>
+      <li><a href="#/docs/react-without-jsx">React Without JSX</a></li>
+      <li><a href="#/docs/reconciliation">Reconciliation</a></li>
+      <li><a href="#/docs/refs-and-the-dom">Refs and the DOM</a></li>
+      <li><a href="#/docs/render-props">Render Props</a></li>
+      <li><a href="#/docs/static-type-checking">Static Type Checking</a></li>
+      <li><a href="#/docs/strict-mode">Strict Mode</a></li>
+      <li><a href="#/docs/typechecking-with-proptypes">Typechecking With PropTypes</a></li>
+      <li><a href="#/docs/uncontrolled-components">Uncontrolled Components</a></li>
+      <li><a href="#/docs/web-components">Web Components</a></li>
+      <li><h3>API Reference</h3></li>
+      <li><a href="#/docs/reference-react">React</a><ul><li><a href="#/docs/reference-react-component">React.Component</a></li></ul></li>
+      <li><a href="#/docs/reference-react-dom">ReactDOM</a></li>
+      <li><a href="#/docs/reference-react-dom-server">ReactDOMServer</a></li>
+      <li><a href="#/docs/reference-dom-elements">DOM Elements</a></li>
+      <li><a href="#/docs/reference-events">SyntheticEvent</a></li>
+      <li><a href="#/docs/addons-test-utils">Test Utilities</a></li>
+      <li><a href="#/docs/addons-shallow-renderer">Shallow Renderer</a></li>
+      <li><a href="#/docs/reference-test-renderer">Test Renderer</a></li>
+      <li><a href="#/docs/reference-javascript-environment-requirements">JS Environment Requirements</a></li>
+      <li><a href="#/docs/reference-glossary">Glossary</a></li>
+      <li><h3>Contributing</h3></li>
+      <li><a href="#/docs/how-to-contribute">How to Contribute</a></li>
+      <li><a href="#/docs/codebase-overview">Codebase Overview</a></li>
+      <li><a href="#/docs/implementation-notes">Implementation Notes</a></li>
+      <li><a href="#/docs/design-principles">Design Principles</a></li>
+      <li><h3>FAQ</h3></li>
+      <li><a href="#/docs/faq-ajax">AJAX and APIs</a></li>
+      <li><a href="#/docs/faq-build">Babel, JSX, and Build Steps</a></li>
+      <li><a href="#/docs/faq-functions">Passing Functions to Components</a></li>
+      <li><a href="#/docs/faq-state">Component State</a></li>
+      <li><a href="#/docs/faq-styling">Styling and CSS</a></li>
+      <li><a href="#/docs/faq-structure">File Structure</a></li>
+      <li><a href="#/docs/faq-internals">Virtual DOM and Internals</a></li>
+    </ul>
+  </nav>
+  <article id="content" class="md-github"></article>
+</div>
+
+<footer>
+  <div class="box">Powered by HDK4.com, designed by xovel.</div>
+</footer>
+
+<a href="https://github.com/hdk4/garden#docs" class="github-corner" aria-label="View source on Github">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#202020; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg>
+</a>
+
+<script src="https://cdn.bootcss.com/marked/0.4.0/marked.min.js"></script>
+<script src="https://cdn.bootcss.com/es6-promise/4.1.1/es6-promise.min.js"></script>
+<script src="https://cdn.bootcss.com/fetch/2.0.4/fetch.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+
+<script>
+var renderer = new marked.Renderer();
+var codeTemplate = renderer.code;
+renderer.code = function(code, lang, escaped) {
+  var hLines = [];
+  var matched = lang && lang.match(/\{(.+?)\}/);
+  if (matched) {
+    hLines = getHLines(matched[1]);
+    lang = lang.replace(/\{(.+?)\}/, '');
+  }
+  var rendered = codeTemplate.call(this, code, lang, escaped);
+  if (hLines.length > 0) {
+    rendered = '<div class="code-hl">' + (function () {
+      var ret = [];
+      hLines.forEach(function (item) {
+        ret.push('<div class="code-hl-item" style="top:' + ((item - 1) * 20 + 16) + 'px"></div>')
+      });
+      return ret.join('');
+    }()) + rendered + '</div>';
+    // rendered = rendered.split('\n').map(function (item, index) {
+    //   if (hLines.indexOf(index + 1) !== -1) {
+    //     console.log(item);
+    //     return item.replace(/([^<>]*<span[^<>]+>([^<>]+|(<span[^<>]+>[^<>]+<\/span>[^<>]*)+)<\/span>[^<>]*)+|^[^<>]+|[^<>]+$/g, function (a) {
+    //       return '<span class="code-hlbg">' + a + '</span>';
+    //     });
+    //   }
+    //   return item;
+    // }).join('\n');
+  }
+  return rendered;
+
+  function getHLines(str) {
+    var ret = [];
+    str.split(',').map(function (item) {
+      if (item.indexOf('-') !== -1) {
+        var nn = item.split('-');
+        for (var i = +nn[0]; i <= +nn[1]; i++) {
+          ret.push(i);
+        }
+      } else {
+        ret.push(+item);
+      }
+    });
+    return ret;
+  }
+};
+
+window.config = {
+  url: 'https://github.com/reactjs/reactjs.org',
+  branch: 'master',
+  rootPath: '/content',
+  assetPath: '/content/images',
+  defaultPage: '/docs/getting-started',
+  fileExt: '.md',
+  cache: 1,
+  filterAsset: function (src, uri) {
+    if (src.indexOf('../') === 0) {
+      return 'https://raw.githubusercontent.com/reactjs/reactjs.org/master/content' + src.replace('../', '/');
+    }
+  },
+  mapLink: {
+    '/downloads.html': 'https://github.com/facebook/react/releases'
+  },
+  filterLink: function (link, uri) {
+    if (link.indexOf('codepen') === 0) {
+      return 'https://reactjs.org/redirect-to-codepen/' + link.slice(10) + '" target="_blank';
+    }
+
+    if (link.indexOf('/blog/') !== -1) {
+      return '#' + link.replace(/(\d+)\/(\d+)\/(\d+)\//, function (a, b, c, d) {
+        return b + '-' + c + '-' + d + '-';
+      }).replace('.html', '.md');
+    }
+
+    if (link.indexOf('.html') !== -1 && link[0] === '/') {
+      var temp = link.replace('.html', '');
+      if (temp === '/docs/test-utils') {
+        temp = '/docs/addons-test-utils';
+      } else if (temp === '/docs/shallow-renderer') {
+        temp = '/docs/addons-shallow-renderer';
+      } else if (temp === '/docs/react-api') {
+        temp = '/docs/reference-react';
+      } else {
+        temp = temp.replace(/^\/docs\/(dom\-elements|react\-dom\-server|react\-dom|react\-component|events)/, function (a, b) {
+          return '/docs/reference-' + b;
+        });
+      }
+      return '#' + temp;
+    }
+    if (link[0] === '#') {
+      return '#' + uri + link;
+    }
+  },
+  markedOptions: {
+    renderer: renderer
+  }
+};
+</script>
+
+<script src="./assets/docs.js"></script>
+
+</body>
+</html>
