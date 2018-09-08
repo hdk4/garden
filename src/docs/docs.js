@@ -28,6 +28,9 @@ if (!window.atob) {
 
 // default highlighter
 marked.defaults.highlight = function (code, lang) {
+  if (!lang) {
+    return code;
+  }
   try {
     code = hljs.highlight(lang, code).value;
   } catch(e) {
