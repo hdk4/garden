@@ -29,6 +29,9 @@
   height: 20px; width: 100%;
   background-color: rgba(0, 0, 0, .1);
 }
+#menu > ul > li > ul ul {
+  padding-left: 1em;
+}
 </style>
 </head>
 <body>
@@ -104,6 +107,16 @@
       <li><a href="#/docs/faq-styling">Styling and CSS</a></li>
       <li><a href="#/docs/faq-structure">File Structure</a></li>
       <li><a href="#/docs/faq-internals">Virtual DOM and Internals</a></li>
+
+      <li><h3>Tutorial</li>
+      <li><a href="#/tutorial/tutorial">Tutorial</a><ul><li><a href="#/tutorial/tutorial#before-we-start-the-tutorial">Before We Start the Tutorial</a><ul class="css-140tz9x"><li><a href="#/tutorial/tutorial#what-are-we-building">What Are We Building?</a></li><li><a href="#/tutorial/tutorial#prerequisites">Prerequisites</a></li></ul></li><li><a href="#/tutorial/tutorial#setup-for-the-tutorial">Setup for the Tutorial</a><ul class="css-140tz9x"><li><a href="#/tutorial/tutorial#setup-option-1-write-code-in-the-browser">Option 1: Write Code in the Browser</a></li><li><a href="#/tutorial/tutorial#setup-option-2-local-development-environment">Option 2: Local Development Environment</a></li><li><a href="#/tutorial/tutorial#help-im-stuck">Help, I'm Stuck!</a></li></ul></li><li><a href="#/tutorial/tutorial#overview">Overview</a><ul class="css-140tz9x"><li><a href="#/tutorial/tutorial#what-is-react">What Is React?</a></li><li><a href="#/tutorial/tutorial#inspecting-the-starter-code">Inspecting the Starter Code</a></li><li><a href="#/tutorial/tutorial#passing-data-through-props">Passing Data Through Props</a></li><li><a href="#/tutorial/tutorial#making-an-interactive-component">Making an Interactive Component</a></li><li><a href="#/tutorial/tutorial#developer-tools">Developer Tools</a></li></ul></li><li><a href="#/tutorial/tutorial#completing-the-game">Completing the Game</a><ul class="css-140tz9x"><li><a href="#/tutorial/tutorial#lifting-state-up">Lifting State Up</a></li><li><a href="#/tutorial/tutorial#why-immutability-is-important">Why Immutability Is Important</a></li><li><a href="#/tutorial/tutorial#functional-components">Functional Components</a></li><li><a href="#/tutorial/tutorial#taking-turns">Taking Turns</a></li><li><a href="#/tutorial/tutorial#declaring-a-winner">Declaring a Winner</a></li></ul></li><li><a href="#/tutorial/tutorial#adding-time-travel">Adding Time Travel</a><ul class="css-140tz9x"><li><a href="#/tutorial/tutorial#storing-a-history-of-moves">Storing a History of Moves</a></li><li><a href="#/tutorial/tutorial#lifting-state-up-again">Lifting State Up, Again</a></li><li><a href="#/tutorial/tutorial#showing-the-past-moves">Showing the Past Moves</a></li><li><a href="#/tutorial/tutorial#picking-a-key">Picking a Key</a></li><li><a href="#/tutorial/tutorial#implementing-time-travel">Implementing Time Travel</a></li><li><a href="#/tutorial/tutorial#wrapping-up">Wrapping Up</a></li></ul></li></ul></li>
+
+
+      <li><h3>Community</h3></li>
+      <li><h4>Community Resources</h4><ul><li><a href="#/community/support">Support</a></li><li><a href="#/community/courses">Courses</a></li><li><a href="#/community/examples">Examples</a></li><li><a href="#/community/meetups">Meetups</a></li><li><a href="#/community/conferences">Conferences</a></li><li><a href="#/community/articles">Articles</a></li><li><a href="#/community/podcasts">Podcasts</a></li><li><a href="#/community/videos">Videos</a></li><li><a href="#/community/external-resources">External Resources</a></li></ul></li>
+
+      <li><h4>Tools</h4><ul><li><a href="#/community/tools-debugging">Debugging</a></li><li><a href="#/community/tools-comp-workbenches">Component Workbenches</a></li><li><a href="#/community/tools-jsx">JSX Integrations</a></li><li><a href="#/community/tools-starter-kits">Starter Kits</a></li><li><a href="#/community/tools-routing">Routing</a></li><li><a href="#/community/tools-model-mgmt">Model Management</a></li><li><a href="#/community/tools-data-fetching">Data Fetching</a></li><li><a href="#/community/tools-testing">Testing</a></li><li><a href="#/community/tools-ui-components">UI Components</a></li><li><a href="#/community/tools-misc">Miscellaneous</a></li></ul></li>
+
     </ul>
   </nav>
   <article id="content" class="md-github"></article>
@@ -189,7 +202,8 @@ window.config = {
     }
   },
   mapLink: {
-    '/downloads.html': 'https://github.com/facebook/react/releases'
+    '/downloads.html': 'https://github.com/facebook/react/releases',
+    '/': 'https://reactjs.org/'
   },
   filterLink: function (link, uri) {
     if (link.indexOf('codepen') === 0) {
