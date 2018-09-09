@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>API 请求测试页面</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.bootcss.com/element-ui/2.4.0/theme-chalk/index.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+  <script src="https://cdn.bootcss.com/element-ui/2.4.0/index.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+  <div v-loading="loading" element-loading-text="加载中...">
+    <el-form ref="form" :model="form" :rules="rules" label-width="100px">
+      <el-form-item label="调用类库" prop="lib">
+        <el-radio-group v-model="form.lib">
+          <el-radio label="jQuery"></el-radio>
+          <el-radio label="axios"></el-radio>
+          <el-radio label="fetch" v-if="supportFetch"></el-radio>
+          <el-radio label="ajax">原生</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="请求地址" prop="url">
+        <el-input v-model="form.url" placeholder="请输入要请求的链接地址" clearable>
+          <el-select v-model="form.type" slot="prepend">
+            <el-option label="GET" value="GET"></el-option>
+            <el-option label="POST" value="POST"></el-option>
+            <el-option label="DELETE" value="DELETE"></el-option>
+            <el-option label="PUT" value="PUT"></el-option>
+            <el-option label="HEAD" value="HEAD"></el-option>
+            <el-option label="TRACE" value="TRACE"></el-option>
+            <el-option label="CONNECT" value="CONNECT"></el-option>
+          </el-select>
+        </el-input>
+      </el-form-item>
+      <el-form-item label="headers" prop="headers">
+        <div class="header-list">
+          <el-row :gutter="10" v-for="(item,index) in form.headers" :key="index">
+            <el-col :span="6">
+              <el-input v-model="item.name" clearable size="mini">
+                <template slot="prepend">名称</template>
+              </el-input>
+            </el-col>
+            <el-col :span="12">
+              <el-input v-model="item.value" clearable size="mini">
+                <template slot="prepend">值</template>
+              </el-input>
+            </el-col>
+            <el-col :span="3">
+              <el-button type="danger" size="mini" icon="el-icon-delete" circle @click="removeHeader(index)"></el-button>
+            </el-col>
+          </el-row>
+        </div>
+        <el-button type="text" style="margin-left:30px;" icon="el-icon-plus" @click="addHeader">添加</el-button>
+      </el-form-item>
+      <el-form-item prop="params">
+        <template slot="label">
+          <el-tooltip class="item" effect="dark" content="请求的参数" placement="top-start">
+            <span>params</span>
+          </el-tooltip>
+        </template>
+        <el-input type="textarea" v-model="form.params" placeholder="请输入请求的 params 参数，示例：foo=bar&abc=123" clearable></el-input>
+      </el-form-item>
+      <el-form-item label="data" prop="data">
+        <el-input type="textarea" v-model="form.data" placeholder='请输入请求的 body 参数，标准 JSON 字符串，如：{"token": "abc"}' clearable></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="onSubmit">发送请求</el-button>
+        <el-button @click="resetForm">重置</el-button>
+      </el-form-item>
+    </el-form>
+    <el-input type="textarea" :rows="10" v-model="result" placeholder="请求结果"></el-input>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      loading: false,
+      form: {
+        lib: 'jQuery',
+        type: 'GET',
+        url: '',
+        headers: [{
+          name: 'Content-Type',
+          value: 'application/json'
+        }],
+        params: '',
+        data: ''
+      },
+      supportFetch: typeof window.fetch === 'function',
+      rules: {
+        lib: [
+          { required: true, message: '请选择调用的类库', trigger: 'blur' },
+        ],
+        type: [
+          { required: true, message: '请选择请求类型', trigger: 'change' }
+        ],
+        url: [
+          { required: true, message: '请输入请求地址', trigger: 'change' },
+          { type: 'url', message: '请输入链接地址', trigger: 'change' }
+        ]
+      },
+      result: '',
+    }
+  },
+  created() {
+    console.log(this)
+  },
+  methods: {
+    onSubmit() {
+      this.$refs.form.validate((valid) => {
+        if (valid) {
+          const options = {
+            ...this.form
+          };
+          if (options.params) {
+            options.url = this.joinUrl(options.url, options.params);
+          }
+          const headers = {};
+          this.form.headers.forEach(item => {
+            if (item.name && item.value) {
+              headers[item.name] = item.value;
+            }
+          })
+          options.headers = headers;
+          options.data = this.form.data ? JSON.parse(this.form.data) : {};
+
+          this.loading = true
+          this.result = ''
+          this[options.lib](options).then(res => {
+            this.$message.success('请求成功')
+            this.loading = false
+            this.result = JSON.stringify(res)
+          }).catch(res => {
+            this.$message.error('请求失败')
+            this.loading = false
+            this.result = res ? JSON.stringify(res) : '请求失败'
+          })
+        } else {
+          return false;
+        }
+      });
+    },
+    joinUrl(url, params) {
+      if (url.indexOf('?') > -1) {
+        url += '&' + params;
+      } else {
+        url += '?' + params;
+      }
+      return url;
+    },
+    resetForm() {
+      this.$refs.form.resetFields();
+      this.result = ''
+    },
+    jQuery(options) {
+      return jQuery.ajax({
+        url: options.url,
+        type: options.type,
+        headers: options.headers,
+        data: options.data
+      })
+    },
+    axios(options) {
+      return axios({
+        url: options.url,
+        method: options.type,
+        headers: options.headers,
+        data: options.data
+      })
+    },
+    fetch(options) {
+      return new Promise((resolve, reject) => {
+        fetch(options.url, {
+          method: options.type,
+          headers: options.headers,
+          body: options.data
+        }).then(res => {
+          const status = res.status;
+          let isSuccess = status >= 200 && status < 400;
+          res.json().then(data => {
+            isSuccess ? resolve(data) : reject(data)
+          })
+        }, error => {
+          reject(error);
+        })
+      });
+    },
+    ajax(options) {
+      var xhr = null;
+      if (window.XMLHttpRequest) {
+        xhr = new window.XMLHttpRequest();
+      } else if (window.ActiveXObject) {
+        xhr = window.ActiveXObject("Microsoft.XMLHTTP");
+      } else {
+        return Promise.reject('……')
+      }
+
+      return new Promise((resolve, reject) => {
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            let isSuccess = xhr.status >= 200 && xhr.status < 400;
+            const res = xhr.responseText ? JSON.parse(xhr.responseText) : '';
+            isSuccess ? resolve(res) : reject(res)
+          }
+        }
+        xhr.open(options.type, options.url, true);
+        for (var key in options.headers) {
+          xhr.setRequestHeader(key, options.headers[key])
+        }
+
+        xhr.send(options.data);
+      });
+
+    },
+    addHeader() {
+      this.form.headers.push({})
+    },
+    removeHeader(index) {
+      this.form.headers.splice(index, 1);
+    }
+  }
+})
+</script>
+<style>
+.el-select .el-input { width: 120px; } .input-with-select .el-input-group__prepend { background-color: #fff; }
+.header-list { padding: 0 20px; }
+</style>
+</body>
+</html>
