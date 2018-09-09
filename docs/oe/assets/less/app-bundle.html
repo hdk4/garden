@@ -1,0 +1,85 @@
+<template id="app.html!view">
+  <div class="navbar navbar-fixed-top"><div class="navbar-inner">
+    <ul class="nav">
+      <li class="brand"><a href="/">LESS2CSS</a></li>
+      <li class="divider-vertical"></li>
+      <li class="${isDrawerOpen ? 'active' : ''} less-options"><a href="javascript:void 0" click.delegate="openDraw()">Options</a></li>
+      <li class="divider-vertical"></li>
+      <li class="option-info"><span>LESS Version:&nbsp;<code class="">${lessOptions.version}</code></span></li>
+    </ul>
+  </div></div>
+
+  <require from="./options-draw"></require>
+  <options-draw visible.bind="isDrawerOpen"></options-draw>
+
+  <require from="./cmeditor"></require>
+
+  <div class="au-animate main">
+    <div class="cm-less">
+      <div class="code-wrap left">
+          <h2 class="code-label left">LESS</h2>
+          <cmeditor value.two-way="lessSrc">
+      </cmeditor></div>
+    </div>
+     <div class="cm-css">
+      <div class="code-wrap right ${hasError ? 'error' : ''}">
+        <h2 class="code-label right">CSS</h2>
+        <cmeditor readonly="true" value.bind="css">
+      </cmeditor></div>
+    </div>
+  </div>
+  <footer class="page-footer">
+    <p>
+      © 2015 Luke Page, Brian Frichette &amp; Contributors. License&nbsp;<a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a>.</p>
+    <p class="small">Special thanks for the Open Source technologies that made building this site a pleasure:&nbsp;<a href="http://lesscss.org/" target="_blank">LESS</a>,&nbsp;<a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>,&nbsp;<a href="http://codemirror.net/" target="_blank">CodeMirror</a>,&nbsp;<a href="http://http://aurelia.io/" target="_blank">Aurelia</a>.</p></footer>
+
+</template>
+<template id="cmeditor.html!view">
+  <textarea ref="cmTextarea"></textarea>
+ </template>
+<template id="options-draw.html!view">
+  <require from="./toggle-button"></require>
+  <section class="options-drawer" css="opacity: ${isVisible ? '1' : '0'}; top: ${isVisible ? '43px' : '0px'}; display: ${isDisplayed ? 'block' : 'none'}">
+    <article class="options-drawer-wrap">
+      <div class="row options-row first-row">
+        <div class="col-sm-3 option-column">
+          <label for="less-version" class="control-label">LESS Version</label>
+          <select id="less-version" class="less-version form-control" value.two-way="selectedLessVersion">
+            <option repeat.for="version of lessVersions" value.bind="version">${version}</option>
+          </select>
+        </div>
+        <div class="col-sm-3 option-column" show.bind="outputLineNumbersAvailable">
+          <label class="control-label">Output Line Numbers</label>
+          <toggle-button enabled.two-way="outputLineNumbers"></toggle-button>
+          <select class="form-control" show.bind="outputLineNumbers" value.two-way="outputLineNumbersType">
+            <option value="comments" selected="selected">Comments</option>
+            <option value="mediaquery">Media Query</option>
+            <option value="all">All</option>
+          </select>
+        </div>
+        <div class="col-sm-3 option-column" show.bind="relativeUrlsAvailable">
+          <label class="control-label">Relative URLs</label>
+          <toggle-button enabled.two-way="relativeUrls"></toggle-button>
+        </div>
+        <div class="col-sm-3 option-column" show.bind="rootPathAvailable">
+          <label class="control-label">Change Rootpath</label>
+          <toggle-button enabled.two-way="rootPathEnabled"></toggle-button>
+          <input placeholder="Enter rootpath" type="text" show.bind="rootPathEnabled" value.two-way="rootPath" class="form-control">
+        </div>
+      </div>
+      <div class="row options-row last-row" show.bind="strictMathAvailable">
+        <div class="col-sm-3 option-column">
+          <label class="control-label">Strict Math</label>
+          <toggle-button enabled.two-way="strictMath"></toggle-button>
+        </div>
+        <div class="col-sm-3 option-column" show.bind="strictUnitsAvailable">
+          <label class="control-label">Strict Units</label>
+          <toggle-button enabled.two-way="strictUnits"></toggle-button>
+        </div>
+      </div>
+    </article>
+  </section>
+</template>
+<template id="toggle-button.html!view">
+  <button class="btn btn-default col-sm-12 ${enabled ? 'active' : ''}" click.delegate="toggle();" data-toggle="button" aria-pressed="false" autocomplete="off">${ enabled ? "Enabled" : "Disabled" }</button>
+</template>
