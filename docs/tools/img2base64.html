@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>图片转 Base64</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="author" content="xovel">
+
+  <meta name="format-detection" content="telephone=no" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+</head>
+<body>
+
+<style type="text/css">
+.main{margin:0px auto; max-width:1200px;}
+.box{border:1px solid #e1e1e1;padding: 10px; margin: 10px 0; border-radius: 3px; }
+#show{min-height:100px; padding: 10px;word-break: break-all; }
+#img{max-width: 100%; vertical-align: top;}
+#tip{ margin:10px 0;}
+.author{ text-align: right; font-size: small;}
+</style>
+
+<div class="main">
+  <h2 id="tip">
+    图片转 Base64 编码工具
+  </h2>
+
+  <input type="file" id="upload" accept="image/*">
+
+  <span id="upload-info"></span>
+
+  <div class="box" id="show"></div>
+
+  <div class='box'>
+    <img id="img">
+  </div>
+
+  <div class="box">
+    <p>Base64 是网络上最常见的用于传输 8Bit 字节代码的编码方式之一，是基于 64 个可打印字符(52 个大小写字母，10 个数字，以及符号“+”、“/”)来表示二进制数据的表示方法。</p>
+    <p>图片可以使用 Base64 进行编码，使用方法为：（引号部分为图片的 Base64 编码）</p>
+    <ul>
+      <li>CSS：<code>background-image: url("data:image...");</code></li>
+      <li>HTML：<code>&lt;img src="data:image..." /&gt;</code></li>
+    </ul>
+    <p>将图片转换成 base64 编码的，在 web 网上一般用于小图片上，不仅可以减少图片的请求数量（集合到 js、css 代码中），还可以防止因为一些相对路径等问题导致图片 404 错误。</p>
+  </div>
+
+  <div class="author">xovel制作/2016.7.7</div>
+</div>
+
+<script>
+window.URL = window.URL || window.webkitURL;
+var $ = function (id) {
+  return document.getElementById(id) || id;
+}
+
+$('upload').onchange = function () {
+  var file = this.files[0];
+
+  $('show').innerHTML = '';
+  $('upload-info').innerHTML = '';
+
+  var blob = $('img').src;
+  $('img').src = '';
+
+  if (/^blob/i.test(blob)) {
+    // 释放前一个资源所占的内存
+    URL.revokeObjectURL(blob);
+  }
+
+  if (!file) {
+    return false; // 未选择文件直接返回
+  }
+
+  // 类型判断
+  // 2016.7.9 对input添加了image限制，这里可以忽略
+  if (!/^image\/\w+/i.test(file.type)) {
+    $('show').innerHTML = '请上传图片类型文件。';
+    return false;
+  }
+
+  $('upload-info').innerHTML = genInfo(file);
+
+  genBase64(file);
+}
+
+function genInfo(file) {
+  var b = file.size;
+  var k, m, r = [];
+  if (b >= 1000) {
+    k = b / 1024;
+    if (k >= 1000) {
+      m = k / 1024;
+      r.push('大小：' + m.toFixed(2) + 'MB');
+    } else {
+      r.push('大小：' + k.toFixed(2) + 'KB');
+    }
+  } else {
+    r.push('大小：' + b + 'B');
+  }
+
+  var blob = URL.createObjectURL(file);
+  $('img').src = blob;
+  r.push('BLOB路径：' + blob);
+
+  return r.join(' ');
+}
+
+function genBase64(file) {
+  var fr = new FileReader();
+  fr.onload = function (e) {
+    $('show').innerHTML = fr.result;
+    // $('show').innerHTML = e.target.result;
+  }
+  fr.readAsDataURL(file);
+}
+
+if (typeof FileReader === 'undefined') {
+  $('upload-info').innerHTML = '当前浏览器不支持 FileReader，请使用现代浏览器进行访问。';
+  $('upload').disabled = true;
+}
+</script>
+
+</body>
+</html>
