@@ -122,7 +122,7 @@ marked.defaults.highlight = function (code, lang) {
     }
 
     if (curPage && curAnchor) {
-      var $anchor = document.getElementById(curAnchor);
+      var $anchor = document.getElementById(curAnchor) || document.getElementsByName(curAnchor)[0];
       if ($anchor) {
         $anchor.scrollIntoView();
       }
