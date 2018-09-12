@@ -14,4 +14,4 @@
 
 ## Docs
 
-[Docs](https://github.com/hdk4/garden/tree/master/docs) for more information.
+[Docs](https://github.com/hdk4/garden/tree/master/src/docs#docs) for more information.
