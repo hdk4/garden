@@ -87,6 +87,16 @@ function _escape(html, encode) {
     .replace(/'/g, '&#39;');
 }
 
+function _highlight(lang, code) {
+  var ret;
+  try {
+    ret = hljs.highlight(lang, code).value;
+  } catch (e) {
+    ret = _escape(code)
+  }
+  return ret;
+}
+
 window.config = {
   url: 'https://github.com/pugjs/pug-zh-cn',
   branch: 'master',
@@ -169,7 +179,7 @@ window.config = {
       var _p = '';
       var ok = true;
       try {
-        _p = _escape(render(c));
+        _p = _highlight('html', render(c));
       } catch(e) {
         ok = false;
         _p = e.toString();
@@ -202,13 +212,12 @@ window.config = {
         var val = _editor.getValue();
         var _p = '';
         try {
-          _p = _escape(render(val));
+          _p = _highlight('html', render(val));
         } catch(e) {
           $result.className = 'language-error';
           _p = e.toString();
         }
         $result.innerHTML = _p;
-        hljs.highlightBlock($result);
       });
     });
   }
