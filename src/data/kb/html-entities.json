@@ -1,0 +1,1120 @@
+{
+  "&iexcl;": {
+    "code": "&#161;",
+    "desc": "inverted exclamation mark",
+    "type": 2
+  },
+  "&Aacute;": {
+    "code": "&#193;",
+    "desc": "capital a, acute accent",
+    "type": 3
+  },
+  "&aacute;": {
+    "code": "&#225;",
+    "desc": "small a, acute accent",
+    "type": 3
+  },
+  "&cent;": {
+    "code": "&#162;",
+    "desc": "cent",
+    "type": 2
+  },
+  "&circ;": {
+    "code": "&#710;",
+    "type": 9
+  },
+  "&acirc;": {
+    "code": "&#226;",
+    "desc": "small a, circumflex accent",
+    "type": 3
+  },
+  "&pound;": {
+    "code": "&#163;",
+    "desc": "pound",
+    "type": 2
+  },
+  "&Atilde;": {
+    "code": "&#195;",
+    "desc": "capital a, tilde",
+    "type": 3
+  },
+  "&atilde;": {
+    "code": "&#227;",
+    "desc": "small a, tilde",
+    "type": 3
+  },
+  "&curren;": {
+    "code": "&#164;",
+    "desc": "currency",
+    "type": 2
+  },
+  "&Auml": {
+    "code": "&#196;"
+  },
+  "&auml;": {
+    "code": "&#228;",
+    "desc": "small a, umlaut mark",
+    "type": 3
+  },
+  "&yen;": {
+    "code": "&#165;",
+    "desc": "yen",
+    "type": 2
+  },
+  "&ring;": {
+    "code": "&#197;"
+  },
+  "&aring;": {
+    "code": "&#229;",
+    "desc": "small a, ring",
+    "type": 3
+  },
+  "&brvbar;": {
+    "code": "&#166;",
+    "desc": "broken vertical bar",
+    "type": 2
+  },
+  "&AElig;": {
+    "code": "&#198;",
+    "desc": "capital ae",
+    "type": 3
+  },
+  "&aelig;": {
+    "code": "&#230;",
+    "desc": "small ae",
+    "type": 3
+  },
+  "&sect;": {
+    "code": "&#167;",
+    "desc": "section",
+    "type": 2
+  },
+  "&Ccedil;": {
+    "code": "&#199;",
+    "desc": "capital c, cedilla",
+    "type": 3
+  },
+  "&ccedil;": {
+    "code": "&#231;",
+    "desc": "small c, cedilla",
+    "type": 3
+  },
+  "&uml;": {
+    "code": "&#168;",
+    "desc": "spacing diaeresis",
+    "type": 2
+  },
+  "&Egrave;": {
+    "code": "&#200;",
+    "desc": "capital e, grave accent",
+    "type": 3
+  },
+  "&egrave;": {
+    "code": "&#232;",
+    "desc": "small e, grave accent",
+    "type": 3
+  },
+  "&copy;": {
+    "code": "&#169;",
+    "desc": "copyright",
+    "type": 2
+  },
+  "&Eacute;": {
+    "code": "&#201;",
+    "desc": "capital e, acute accent",
+    "type": 3
+  },
+  "&eacute;": {
+    "code": "&#233;",
+    "desc": "small e, acute accent",
+    "type": 3
+  },
+  "&ordf;": {
+    "code": "&#170;",
+    "desc": "feminine ordinal indicator",
+    "type": 2
+  },
+  "&Ecirc;": {
+    "code": "&#202;",
+    "desc": "capital e, circumflex accent",
+    "type": 3
+  },
+  "&ecirc;": {
+    "code": "&#234;",
+    "desc": "small e, circumflex accent",
+    "type": 3
+  },
+  "&laquo;": {
+    "code": "&#171;",
+    "desc": "angle quotation mark (left)",
+    "type": 2
+  },
+  "&Euml;": {
+    "code": "&#203;",
+    "desc": "capital e, umlaut mark",
+    "type": 3
+  },
+  "&euml;": {
+    "code": "&#235;",
+    "desc": "small e, umlaut mark",
+    "type": 3
+  },
+  "&not;": {
+    "code": "&#172;",
+    "desc": "negation",
+    "type": 2
+  },
+  "&Igrave;": {
+    "code": "&#204;",
+    "desc": "capital i, grave accent",
+    "type": 3
+  },
+  "&igrave;": {
+    "code": "&#236;",
+    "desc": "small i, grave accent",
+    "type": 3
+  },
+  "&shy;": {
+    "code": "&#173;",
+    "desc": "soft hyphen",
+    "type": 2
+  },
+  "&Iacute;": {
+    "code": "&#205;",
+    "desc": "capital i, acute accent",
+    "type": 3
+  },
+  "&iacute;": {
+    "code": "&#237;",
+    "desc": "small i, acute accent",
+    "type": 3
+  },
+  "&reg;": {
+    "code": "&#174;",
+    "desc": "registered trademark",
+    "type": 2
+  },
+  "&Icirc;": {
+    "code": "&#206;",
+    "desc": "capital i, circumflex accent",
+    "type": 3
+  },
+  "&icirc;": {
+    "code": "&#238;",
+    "desc": "small i, circumflex accent",
+    "type": 3
+  },
+  "&macr;": {
+    "code": "&#175;",
+    "desc": "spacing macron",
+    "type": 2
+  },
+  "&Iuml;": {
+    "code": "&#207;",
+    "desc": "capital i, umlaut mark",
+    "type": 3
+  },
+  "&iuml;": {
+    "code": "&#239;",
+    "desc": "small i, umlaut mark",
+    "type": 3
+  },
+  "&deg;": {
+    "code": "&#176;",
+    "desc": "degree",
+    "type": 2
+  },
+  "&ETH;": {
+    "code": "&#208;",
+    "desc": "capital eth, Icelandic",
+    "type": 3
+  },
+  "&ieth;": {
+    "code": "&#240;"
+  },
+  "&plusmn;": {
+    "code": "&#177;",
+    "desc": "plus-or-minus ",
+    "type": 2
+  },
+  "&Ntilde;": {
+    "code": "&#209;",
+    "desc": "capital n, tilde",
+    "type": 3
+  },
+  "&ntilde;": {
+    "code": "&#241;",
+    "desc": "small n, tilde",
+    "type": 3
+  },
+  "&sup2;": {
+    "code": "&#178;",
+    "desc": "superscript 2",
+    "type": 2
+  },
+  "&Ograve;": {
+    "code": "&#210;",
+    "desc": "capital o, grave accent",
+    "type": 3
+  },
+  "&ograve;": {
+    "code": "&#242;",
+    "desc": "small o, grave accent",
+    "type": 3
+  },
+  "&sup3;": {
+    "code": "&#179;",
+    "desc": "superscript 3",
+    "type": 2
+  },
+  "&Oacute;": {
+    "code": "&#211;",
+    "desc": "capital o, acute accent",
+    "type": 3
+  },
+  "&oacute;": {
+    "code": "&#243;",
+    "desc": "small o, acute accent",
+    "type": 3
+  },
+  "&acute;": {
+    "code": "&#180;",
+    "desc": "spacing acute",
+    "type": 2
+  },
+  "&Ocirc;": {
+    "code": "&#212;",
+    "desc": "capital o, circumflex accent",
+    "type": 3
+  },
+  "&ocirc;": {
+    "code": "&#244;",
+    "desc": "small o, circumflex accent",
+    "type": 3
+  },
+  "&micro;": {
+    "code": "&#181;",
+    "desc": "micro",
+    "type": 2
+  },
+  "&Otilde;": {
+    "code": "&#213;",
+    "desc": "capital o, tilde",
+    "type": 3
+  },
+  "&otilde;": {
+    "code": "&#245;",
+    "desc": "small o, tilde",
+    "type": 3
+  },
+  "&para;": {
+    "code": "&#182;",
+    "desc": "paragraph",
+    "type": 2
+  },
+  "&Ouml;": {
+    "code": "&#214;",
+    "desc": "capital o, umlaut mark",
+    "type": 3
+  },
+  "&ouml;": {
+    "code": "&#246;",
+    "desc": "small o, umlaut mark",
+    "type": 3
+  },
+  "&middot;": {
+    "code": "&#183;",
+    "desc": "middle dot",
+    "type": 2
+  },
+  "&times;": {
+    "code": "&#215;",
+    "desc": "multiplication",
+    "type": 2
+  },
+  "&divide;": {
+    "code": "&#247;",
+    "desc": "division",
+    "type": 2
+  },
+  "&cedil;": {
+    "code": "&#184;",
+    "desc": "spacing cedilla",
+    "type": 2
+  },
+  "&Oslash;": {
+    "code": "&#216;",
+    "desc": "capital o, slash",
+    "type": 3
+  },
+  "&oslash;": {
+    "code": "&#248;",
+    "desc": "small o, slash",
+    "type": 3
+  },
+  "&sup1;": {
+    "code": "&#185;",
+    "desc": "superscript 1",
+    "type": 2
+  },
+  "&Ugrave;": {
+    "code": "&#217;",
+    "desc": "capital u, grave accent",
+    "type": 3
+  },
+  "&ugrave;": {
+    "code": "&#249;",
+    "desc": "small u, grave accent",
+    "type": 3
+  },
+  "&ordm;": {
+    "code": "&#186;",
+    "desc": "masculine ordinal indicator",
+    "type": 2
+  },
+  "&Uacute;": {
+    "code": "&#218;",
+    "desc": "capital u, acute accent",
+    "type": 3
+  },
+  "&uacute;": {
+    "code": "&#250;",
+    "desc": "small u, acute accent",
+    "type": 3
+  },
+  "&raquo;": {
+    "code": "&#187;",
+    "desc": "angle quotation mark (right)",
+    "type": 2
+  },
+  "&Ucirc;": {
+    "code": "&#219;",
+    "desc": "capital u, circumflex accent",
+    "type": 3
+  },
+  "&ucirc;": {
+    "code": "&#251;",
+    "desc": "small u, circumflex accent",
+    "type": 3
+  },
+  "&frac14;": {
+    "code": "&#188;",
+    "desc": "fraction 1/4",
+    "type": 2
+  },
+  "&Uuml;": {
+    "code": "&#220;",
+    "desc": "capital u, umlaut mark",
+    "type": 3
+  },
+  "&uuml;": {
+    "code": "&#252;",
+    "desc": "small u, umlaut mark",
+    "type": 3
+  },
+  "&frac12;": {
+    "code": "&#189;",
+    "desc": "fraction 1/2",
+    "type": 2
+  },
+  "&Yacute;": {
+    "code": "&#221;",
+    "desc": "capital y, acute accent",
+    "type": 3
+  },
+  "&yacute;": {
+    "code": "&#253;",
+    "desc": "small y, acute accent",
+    "type": 3
+  },
+  "&frac34;": {
+    "code": "&#190;",
+    "desc": "fraction 3/4",
+    "type": 2
+  },
+  "&THORN;": {
+    "code": "&#222;",
+    "desc": "capital THORN, Icelandic",
+    "type": 3
+  },
+  "&thorn;": {
+    "code": "&#254;",
+    "desc": "small thorn, Icelandic",
+    "type": 3
+  },
+  "&iquest;": {
+    "code": "&#191;",
+    "desc": "inverted question mark",
+    "type": 2
+  },
+  "&szlig;": {
+    "code": "&#223;",
+    "desc": "small sharp s, German",
+    "type": 3
+  },
+  "&yuml;": {
+    "code": "&#255;",
+    "desc": "small y, umlaut mark",
+    "type": 3
+  },
+  "&Agrave;": {
+    "code": "&#192;",
+    "desc": "capital a, grave accent",
+    "type": 3
+  },
+  "&agrave;": {
+    "code": "&#224;",
+    "desc": "small a, grave accent",
+    "type": 3
+  },
+  "&quot;": {
+    "code": "&#34;",
+    "type": 9
+  },
+  "&amp;": {
+    "code": "&#38;",
+    "type": 9
+  },
+  "&lt;": {
+    "code": "&#60;",
+    "type": 9
+  },
+  "&gt;": {
+    "code": "&#62;",
+    "type": 9
+  },
+  "&nbsp;": {
+    "code": "&#160;",
+    "desc": "non-breaking space",
+    "type": 2
+  },
+  "&ensp;": {
+    "code": "&#8194;",
+    "type": 9
+  },
+  "&emsp;": {
+    "code": "&#8195;",
+    "type": 9
+  },
+  "&apos;": {
+    "code": "&#39;",
+    "desc": "apostrophe ",
+    "type": 1
+  },
+  "&Acirc;": {
+    "code": "&#194;",
+    "desc": "capital a, circumflex accent",
+    "type": 3
+  },
+  "&Auml;": {
+    "code": "&#196;",
+    "desc": "capital a, umlaut mark",
+    "type": 3
+  },
+  "&Aring;": {
+    "code": "&#197;",
+    "desc": "capital a, ring",
+    "type": 3
+  },
+  "&eth;": {
+    "code": "&#240;",
+    "desc": "small eth, Icelandic",
+    "type": 3
+  },
+  "&OElig;": {
+    "code": "&#338;",
+    "type": 9
+  },
+  "&oelig;": {
+    "code": "&#339;",
+    "type": 9
+  },
+  "&Scaron;": {
+    "code": "&#352;",
+    "type": 9
+  },
+  "&scaron;": {
+    "code": "&#353;",
+    "type": 9
+  },
+  "&Yuml;": {
+    "code": "&#376;",
+    "type": 9
+  },
+  "&tilde;": {
+    "code": "&#732;",
+    "type": 9
+  },
+  "&thinsp;": {
+    "code": "&#8201;",
+    "type": 9
+  },
+  "&zwnj;": {
+    "code": "&#8204;",
+    "type": 9
+  },
+  "&zwj;": {
+    "code": "&#8205;",
+    "type": 9
+  },
+  "&lrm;": {
+    "code": "&#8206;",
+    "type": 9
+  },
+  "&rlm;": {
+    "code": "&#8207;",
+    "type": 9
+  },
+  "&ndash;": {
+    "code": "&#8211;",
+    "type": 9
+  },
+  "&mdash;": {
+    "code": "&#8212;",
+    "type": 9
+  },
+  "&lsquo;": {
+    "code": "&#8216;",
+    "type": 9
+  },
+  "&rsquo;": {
+    "code": "&#8217;",
+    "type": 9
+  },
+  "&sbquo;": {
+    "code": "&#8218;",
+    "type": 9
+  },
+  "&ldquo;": {
+    "code": "&#8220;",
+    "type": 9
+  },
+  "&rdquo;": {
+    "code": "&#8221;",
+    "type": 9
+  },
+  "&bdquo;": {
+    "code": "&#8222;",
+    "type": 9
+  },
+  "&dagger;": {
+    "code": "&#8224;",
+    "type": 9
+  },
+  "&Dagger;": {
+    "code": "&#8225;",
+    "type": 9
+  },
+  "&permil;": {
+    "code": "&#8240;",
+    "type": 9
+  },
+  "&lsaquo;": {
+    "code": "&#8249;",
+    "type": 9
+  },
+  "&rsaquo;": {
+    "code": "&#8250;",
+    "type": 9
+  },
+  "&euro;": {
+    "code": "&#8364;",
+    "type": 9
+  },
+  "&fnof;": {
+    "code": "&#402;",
+    "type": 8
+  },
+  "&Alpha;": {
+    "code": "&#913;",
+    "type": 8
+  },
+  "&Beta;": {
+    "code": "&#914;",
+    "type": 8
+  },
+  "&Gamma;": {
+    "code": "&#915;",
+    "type": 8
+  },
+  "&Delta;": {
+    "code": "&#916;",
+    "type": 8
+  },
+  "&Epsilon;": {
+    "code": "&#917;",
+    "type": 8
+  },
+  "&Zeta;": {
+    "code": "&#918;",
+    "type": 8
+  },
+  "&Eta;": {
+    "code": "&#919;",
+    "type": 8
+  },
+  "&Theta;": {
+    "code": "&#920;",
+    "type": 8
+  },
+  "&Iota;": {
+    "code": "&#921;",
+    "type": 8
+  },
+  "&Kappa;": {
+    "code": "&#922;",
+    "type": 8
+  },
+  "&Lambda;": {
+    "code": "&#923;",
+    "type": 8
+  },
+  "&Mu;": {
+    "code": "&#924;",
+    "type": 8
+  },
+  "&Nu;": {
+    "code": "&#925;",
+    "type": 8
+  },
+  "&Xi;": {
+    "code": "&#926;",
+    "type": 8
+  },
+  "&Omicron;": {
+    "code": "&#927;",
+    "type": 8
+  },
+  "&Pi;": {
+    "code": "&#928;",
+    "type": 8
+  },
+  "&Rho;": {
+    "code": "&#929;",
+    "type": 8
+  },
+  "&Sigma;": {
+    "code": "&#931;",
+    "type": 8
+  },
+  "&Tau;": {
+    "code": "&#932;",
+    "type": 8
+  },
+  "&Upsilon;": {
+    "code": "&#933;",
+    "type": 8
+  },
+  "&Phi;": {
+    "code": "&#934;",
+    "type": 8
+  },
+  "&Chi;": {
+    "code": "&#935;",
+    "type": 8
+  },
+  "&Psi;": {
+    "code": "&#936;",
+    "type": 8
+  },
+  "&Omega;": {
+    "code": "&#937;",
+    "type": 8
+  },
+  "&alpha;": {
+    "code": "&#945;",
+    "type": 8
+  },
+  "&beta;": {
+    "code": "&#946;",
+    "type": 8
+  },
+  "&gamma;": {
+    "code": "&#947;",
+    "type": 8
+  },
+  "&delta;": {
+    "code": "&#948;",
+    "type": 8
+  },
+  "&epsilon;": {
+    "code": "&#949;",
+    "type": 8
+  },
+  "&zeta;": {
+    "code": "&#950;",
+    "type": 8
+  },
+  "&eta;": {
+    "code": "&#951;",
+    "type": 8
+  },
+  "&theta;": {
+    "code": "&#952;",
+    "type": 8
+  },
+  "&iota;": {
+    "code": "&#953;",
+    "type": 8
+  },
+  "&kappa;": {
+    "code": "&#954;",
+    "type": 8
+  },
+  "&lambda;": {
+    "code": "&#955;",
+    "type": 8
+  },
+  "&mu;": {
+    "code": "&#956;",
+    "type": 8
+  },
+  "&nu;": {
+    "code": "&#957;",
+    "type": 8
+  },
+  "&xi;": {
+    "code": "&#958;",
+    "type": 8
+  },
+  "&omicron;": {
+    "code": "&#959;",
+    "type": 8
+  },
+  "&pi;": {
+    "code": "&#960;",
+    "type": 8
+  },
+  "&rho;": {
+    "code": "&#961;",
+    "type": 8
+  },
+  "&sigmaf;": {
+    "code": "&#962;",
+    "type": 8
+  },
+  "&sigma;": {
+    "code": "&#963;",
+    "type": 8
+  },
+  "&tau;": {
+    "code": "&#964;",
+    "type": 8
+  },
+  "&upsilon;": {
+    "code": "&#965;",
+    "type": 8
+  },
+  "&phi;": {
+    "code": "&#966;",
+    "type": 8
+  },
+  "&chi;": {
+    "code": "&#967;",
+    "type": 8
+  },
+  "&psi;": {
+    "code": "&#968;",
+    "type": 8
+  },
+  "&omega;": {
+    "code": "&#969;",
+    "type": 8
+  },
+  "&thetasym;": {
+    "code": "&#977;",
+    "type": 8
+  },
+  "&upsih;": {
+    "code": "&#978;",
+    "type": 8
+  },
+  "&piv;": {
+    "code": "&#982;",
+    "type": 8
+  },
+  "&bull;": {
+    "code": "&#8226;",
+    "type": 8
+  },
+  "&hellip;": {
+    "code": "&#8230;",
+    "type": 8
+  },
+  "&prime;": {
+    "code": "&#8242;",
+    "type": 8
+  },
+  "&Prime;": {
+    "code": "&#8243;",
+    "type": 8
+  },
+  "&oline;": {
+    "code": "&#8254;",
+    "type": 8
+  },
+  "&frasl;": {
+    "code": "&#8260;",
+    "type": 8
+  },
+  "&weierp;": {
+    "code": "&#8472;",
+    "type": 8
+  },
+  "&image;": {
+    "code": "&#8465;",
+    "type": 8
+  },
+  "&real;": {
+    "code": "&#8476;",
+    "type": 8
+  },
+  "&trade;": {
+    "code": "&#8482;",
+    "type": 8
+  },
+  "&alefsym;": {
+    "code": "&#8501;",
+    "type": 8
+  },
+  "&larr;": {
+    "code": "&#8592;",
+    "type": 8
+  },
+  "&uarr;": {
+    "code": "&#8593;",
+    "type": 8
+  },
+  "&rarr;": {
+    "code": "&#8594;",
+    "type": 8
+  },
+  "&darr;": {
+    "code": "&#8595;",
+    "type": 8
+  },
+  "&harr;": {
+    "code": "&#8596;",
+    "type": 8
+  },
+  "&crarr;": {
+    "code": "&#8629;",
+    "type": 8
+  },
+  "&lArr;": {
+    "code": "&#8656;",
+    "type": 8
+  },
+  "&uArr;": {
+    "code": "&#8657;",
+    "type": 8
+  },
+  "&rArr;": {
+    "code": "&#8658;",
+    "type": 8
+  },
+  "&dArr;": {
+    "code": "&#8659;",
+    "type": 8
+  },
+  "&hArr;": {
+    "code": "&#8660;",
+    "type": 8
+  },
+  "&forall;": {
+    "code": "&#8704;",
+    "type": 8
+  },
+  "&part;": {
+    "code": "&#8706;",
+    "type": 8
+  },
+  "&exist;": {
+    "code": "&#8707;",
+    "type": 8
+  },
+  "&empty;": {
+    "code": "&#8709;",
+    "type": 8
+  },
+  "&nabla;": {
+    "code": "&#8711;",
+    "type": 8
+  },
+  "&isin;": {
+    "code": "&#8712;",
+    "type": 8
+  },
+  "&notin;": {
+    "code": "&#8713;",
+    "type": 8
+  },
+  "&ni;": {
+    "code": "&#8715;",
+    "type": 8
+  },
+  "&prod;": {
+    "code": "&#8719;",
+    "type": 8
+  },
+  "&sum;": {
+    "code": "&#8721;",
+    "type": 8
+  },
+  "&minus;": {
+    "code": "&#8722;",
+    "type": 8
+  },
+  "&lowast;": {
+    "code": "&#8727;",
+    "type": 8
+  },
+  "&radic;": {
+    "code": "&#8730;",
+    "type": 8
+  },
+  "&prop;": {
+    "code": "&#8733;",
+    "type": 8
+  },
+  "&infin;": {
+    "code": "&#8734;",
+    "type": 8
+  },
+  "&ang;": {
+    "code": "&#8736;",
+    "type": 8
+  },
+  "&and;": {
+    "code": "&#8743;",
+    "type": 8
+  },
+  "&or;": {
+    "code": "&#8744;",
+    "type": 8
+  },
+  "&cap;": {
+    "code": "&#8745;",
+    "type": 8
+  },
+  "&cup;": {
+    "code": "&#8746;",
+    "type": 8
+  },
+  "&int;": {
+    "code": "&#8747;",
+    "type": 8
+  },
+  "&there4;": {
+    "code": "&#8756;",
+    "type": 8
+  },
+  "&sim;": {
+    "code": "&#8764;",
+    "type": 8
+  },
+  "&cong;": {
+    "code": "&#8773;",
+    "type": 8
+  },
+  "&asymp;": {
+    "code": "&#8776;",
+    "type": 8
+  },
+  "&ne;": {
+    "code": "&#8800;",
+    "type": 8
+  },
+  "&equiv;": {
+    "code": "&#8801;",
+    "type": 8
+  },
+  "&le;": {
+    "code": "&#8804;",
+    "type": 8
+  },
+  "&ge;": {
+    "code": "&#8805;",
+    "type": 8
+  },
+  "&sub;": {
+    "code": "&#8834;",
+    "type": 8
+  },
+  "&sup;": {
+    "code": "&#8835;",
+    "type": 8
+  },
+  "&nsub;": {
+    "code": "&#8836;",
+    "type": 8
+  },
+  "&sube;": {
+    "code": "&#8838;",
+    "type": 8
+  },
+  "&supe;": {
+    "code": "&#8839;",
+    "type": 8
+  },
+  "&oplus;": {
+    "code": "&#8853;",
+    "type": 8
+  },
+  "&otimes;": {
+    "code": "&#8855;",
+    "type": 8
+  },
+  "&perp;": {
+    "code": "&#8869;",
+    "type": 8
+  },
+  "&sdot;": {
+    "code": "&#8901;",
+    "type": 8
+  },
+  "&lceil;": {
+    "code": "&#8968;",
+    "type": 8
+  },
+  "&rceil;": {
+    "code": "&#8969;",
+    "type": 8
+  },
+  "&lfloor;": {
+    "code": "&#8970;",
+    "type": 8
+  },
+  "&rfloor;": {
+    "code": "&#8971;",
+    "type": 8
+  },
+  "&lang;": {
+    "code": "&#9001;",
+    "type": 8
+  },
+  "&rang;": {
+    "code": "&#9002;",
+    "type": 8
+  },
+  "&loz;": {
+    "code": "&#9674;",
+    "type": 8
+  },
+  "&spades;": {
+    "code": "&#9824;",
+    "type": 8
+  },
+  "&clubs;": {
+    "code": "&#9827;",
+    "type": 8
+  },
+  "&hearts;": {
+    "code": "&#9829;",
+    "type": 8
+  },
+  "&diams;": {
+    "code": "&#9830;",
+    "type": 8
+  }
+}
