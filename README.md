@@ -2,6 +2,11 @@
 
 > Yep, it is just an interesting GARDEN.
 
+## Knowledge Base
+
+- [HTML Entities](https://hdk4.com/garden/kb/html-entities.html)
+- [Content-Type(Mime-Type)](https://hdk4.com/garden/kb/mime-type.html)
+
 ## Tools
 
 - [`img2base64`](https://hdk4.com/garden/tools/img2base64.html), use [`window.URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) to parse an image file to a base64 encoded string.
