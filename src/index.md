@@ -6,6 +6,7 @@
 
 - [HTML Entities](https://hdk4.com/garden/kb/html-entities.html)
 - [Content-Type(Mime-Type)](https://hdk4.com/garden/kb/mime-type.html)
+- [CSS Color Keywords](https://hdk4.com/garden/kb/css-color-keywords.html)
 
 ## Tools
 
