@@ -27,5 +27,6 @@
 - [webpack 4](https://hdk4.com/garden/docs/webpack.html)
 - [lodash v4.17.10](https://hdk4.com/garden/docs/lodash.html), [static](https://hdk4.com/garden/docs/lodash_static.html)
 - [react](https://hdk4.com/garden/docs/react.html)
+- [weui.js](https://hdk4.com/garden/docs/weui.js.html)
 
 Or visit this [list](https://hdk4.com/garden/docs/index.html) directly.
