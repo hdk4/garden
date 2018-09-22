@@ -1,0 +1,27 @@
+{
+  "name": "gank",
+  "version": "0.0.3",
+  "private": true,
+  "author": "xovel <xovel@vip.qq.com>",
+  "homepage": "https://github.com/hdk4/garden/tree/master/src/gank",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "nprogress": "^0.2.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
