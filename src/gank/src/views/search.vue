@@ -6,7 +6,7 @@
     </div>
     <z-category v-model="cat" :list="cats"></z-category>
     <z-list class="mt10" :list="listData"></z-list>
-    <div class="more" v-if="hasMore" @click="loadMore">{{textMore}}</div>
+    <div class="more pointer" v-if="hasMore" @click="loadMore">{{textMore}}</div>
     <div class="more" v-else-if="hasLoaded">没有更多的信息了</div>
   </div>
 </template>

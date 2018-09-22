@@ -50,6 +50,7 @@ export default {
   max-width: 800px;
   margin: 0 auto;
   padding: 5px;
+  word-break: break-all;
 }
 .footer {
   position: fixed;

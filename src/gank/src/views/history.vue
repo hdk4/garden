@@ -38,6 +38,7 @@ export default {
   overflow: hidden;
 }
 .history-item {
+  cursor: pointer;
   float: left;
   width: 33.33%;
   text-align: center;
