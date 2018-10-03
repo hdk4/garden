@@ -5,7 +5,7 @@
     </keep-alive>
     <div class="h50"></div>
     <div class="footer">
-      <router-link to="/home" class="foot-tab" :class="{on: isHome}">妹纸</router-link>
+      <router-link to="/girls" class="foot-tab" :class="{on: isHome}">妹纸</router-link>
       <router-link to="/history" class="foot-tab" :class="{on: isHistory}">历史</router-link>
       <router-link to="/category" class="foot-tab" :class="{on: isCategory}">分类</router-link>
       <router-link to="/search" class="foot-tab" :class="{on: isSearch}">搜索</router-link>
@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     isHome() {
-      return this.$route.path.indexOf('home') !== -1
+      return this.$route.path.indexOf('girls') !== -1
     },
     isHistory() {
       return this.$route.path.indexOf('history') !== -1

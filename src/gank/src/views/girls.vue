@@ -15,7 +15,7 @@ import {
 } from '@/api/gank';
 
 export default {
-  name: 'home',
+  name: 'girls',
   data() {
     return {
       imgs: [],

@@ -31,7 +31,7 @@ export default {
         'App',
         '拓展资源'
       ],
-      cat: 'Android'
+      cat: '前端'
     }
   },
   created() {

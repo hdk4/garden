@@ -12,11 +12,11 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'index',
-    redirect: '/home'
+    redirect: '/category'
   }, {
-    path: '/home',
-    name: 'home',
-    component: () => import('./views/home')
+    path: '/girls',
+    name: 'girls',
+    component: () => import('./views/girls')
   }, {
     path: '/detail/:year/:month/:day',
     name: 'detail',
