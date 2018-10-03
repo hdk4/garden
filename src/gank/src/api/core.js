@@ -1,7 +1,7 @@
 import axios from 'axios'
 import store from '../store'
 
-export const baseURL = '/api' //'https://garden.hdk4.com/__gank_api__' //
+export const baseURL = 'https://garden.hdk4.com/__gank_api__' //'/api' //
 
 export default function core(url, options = {}) {
   const headers = {
