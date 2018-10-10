@@ -28,5 +28,9 @@
 - [lodash v4.17.10](https://hdk4.com/garden/docs/lodash.html), [static](https://hdk4.com/garden/docs/lodash_static.html)
 - [react](https://hdk4.com/garden/docs/react.html)
 - [weui.js](https://hdk4.com/garden/docs/weui.js.html)
+- [axios](https://hdk4.com/garden/docs/axios.html)
+- [gulp v4](https://hdk4.com/garden/docs/gulp.html), [v3.9.1](https://hdk4.com/garden/docs/gulp-v3.9.1.html)
 
 Or visit this [list](https://hdk4.com/garden/docs/index.html) directly.
+
+> [Docs](https://github.com/hdk4/garden/tree/master/src/docs#docs) for more information.
