@@ -173,6 +173,10 @@ marked.defaults.highlight = function (code, lang) {
 
       var html = marked(raw, config.markedOptions || {});
 
+      if (config.filterHTML) {
+        html = config.filterHTML(html, uri);
+      }
+
       // replace asset path
       html = html.replace(/src="((?!https?:\/\/|ftp\:\/\/).+?)"/g, function (a, b) {
         var src = config.filterAsset && config.filterAsset(b, uri) || fetchAssets(b);
@@ -184,10 +188,6 @@ marked.defaults.highlight = function (code, lang) {
           var link = config.mapLink && config.mapLink[b] || config.filterLink && config.filterLink(b, uri) || b;
           return 'href="' + link + '"';
         });
-      }
-
-      if (config.filterHTML) {
-        html = config.filterHTML(html, uri);
       }
 
       $content.innerHTML = html;
