@@ -150,7 +150,7 @@ window.config = {
   },
   filterRaw: function (raw, uri) {
     raw = raw.replace('<Bit/>', '');
-    raw = raw.replace(/(:{3,})\s*(.+)?\s*\n?([\s\S]+)\1/g, function (a, b, c, d) {
+    raw = raw.replace(/(:{3,})\s*(.+)?\s*\n?([\s\S]+?)\1/g, function (a, b, c, d) {
       _raw.push([c, d]);
       return '<div id="_raw' + _raw.length + '"></div>\n';
     });
