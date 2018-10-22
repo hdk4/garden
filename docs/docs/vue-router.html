@@ -88,6 +88,7 @@
       <li><a href="#/guide/advanced/lazy-loading">Lazy Loading Routes</a></li>
       <li><h3>API Reference</h3></li>
       <li><a href="#/api/README">API</a><ul><li><a href="#/api/README#router-link">&lt;router-link&gt;</a></li><li><a href="#/api/README#router-link-props">&lt;router-link&gt; Props</a></li><li><a href="#/api/README#router-view">&lt;router-view&gt;</a></li><li><a href="#/api/README#router-view-props" class="active sidebar-link">&lt;router-view&gt; Props</a></li><li><a href="#/api/README#router-construction-options">Router Construction Options</a></li><li><a href="#/api/README#router-instance-properties">Router Instance Properties</a></li><li><a href="#/api/README#router-instance-methods">Router Instance Methods</a></li><li><a href="#/api/README#the-route-object">The Route Object</a></li><li><a href="#/api/README#component-injections">Component Injections</a></li></ul></li>
+    </ul>
   </nav>
   <article id="content" class="md-github"></article>
 </div>
@@ -161,7 +162,9 @@ window.config = {
       var n = +b - 1;
       var content = _raw[n];
       var kn = content[0].split(' ');
-      return '<div class="' + kn[0] + ' custom-block"><p class="custom-block-title">' + kn[1] + '</p>' + marked(content[1]) + '</div>';
+      var kls = kn[0] || 'tip';
+      var title = kn.slice(1).join(' ') || 'TIP';
+      return '<div class="' + kls + ' custom-block"><p class="custom-block-title">' + title + '</p>' + marked(content[1]) + '</div>';
     });
     return html;
   }
