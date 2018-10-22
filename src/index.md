@@ -20,8 +20,15 @@
 
 ## Docs
 
+Visit this [list](https://hdk4.com/garden/docs/index.html) directly.
+
 - [marked.js](https://hdk4.com/garden/docs/marked.html)
 - [vue 2.x](https://hdk4.com/garden/docs/vue.html), [Chinese](https://hdk4.com/garden/docs/vue_zh.html)
+- [vuex](https://hdk4.com/garden/docs/vuex.html)
+- [Vue Router](https://hdk4.com/garden/docs/vue-router.html)
+- [Vue CLI 3](https://hdk4.com/garden/docs/vue-cli.html)
+- [Vue Loader](https://hdk4.com/garden/docs/vue-loader.html)
+- [Vue SSR](https://hdk4.com/garden/docs/vue-ssr.html)
 - [less.js](https://hdk4.com/garden/docs/less.html)
 - [pug](https://hdk4.com/garden/docs/pug.html), [Chinese](https://hdk4.com/garden/docs/pug_zh.html)
 - [webpack 4](https://hdk4.com/garden/docs/webpack.html)
@@ -31,6 +38,6 @@
 - [axios](https://hdk4.com/garden/docs/axios.html)
 - [gulp v4](https://hdk4.com/garden/docs/gulp.html), [v3.9.1](https://hdk4.com/garden/docs/gulp-v3.9.1.html)
 
-Or visit this [list](https://hdk4.com/garden/docs/index.html) directly.
+> Caution: While using Chinese, due to the encode/decode problems, some links maybe **invalid**. There is no plans to fixed it, just visit the English documentation alternatively.
 
 > [Docs](https://github.com/hdk4/garden/tree/master/src/docs#docs) for more information.
