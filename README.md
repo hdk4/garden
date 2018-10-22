@@ -10,6 +10,4 @@
 - Docs
 - ...
 
-## Detail
-
-Visit [me](https://github.com/hdk4/garden/tree/master/src/index.md) for more information.
+Visit [HRER](https://github.com/hdk4/garden/tree/master/src/index.md) for more information.
