@@ -94,6 +94,15 @@
       <li><a href="#/docs/reference-test-renderer">Test Renderer</a></li>
       <li><a href="#/docs/reference-javascript-environment-requirements">JS Environment Requirements</a></li>
       <li><a href="#/docs/reference-glossary">Glossary</a></li>
+      <li><h3>HOOKS (PROPOSAL)</h3></li>
+      <li><a href="#/docs/hooks-intro">1. Introducing Hooks</a></li>
+      <li><a href="#/docs/hooks-overview">2. Hooks at a Glance</a></li>
+      <li><a href="#/docs/hooks-state">3. Using the State Hook</a></li>
+      <li><a href="#/docs/hooks-effect">4. Using the Effect Hook</a></li>
+      <li><a href="#/docs/hooks-rules">5. Rules of Hooks</a></li>
+      <li><a href="#/docs/hooks-custom">6. Building Your Own Hooks</a></li>
+      <li><a href="#/docs/hooks-reference">7. Hooks API Reference</a></li>
+      <li><a href="#/docs/hooks-faq">8. Hooks FAQ</a></li>
       <li><h3>Contributing</h3></li>
       <li><a href="#/docs/how-to-contribute">How to Contribute</a></li>
       <li><a href="#/docs/codebase-overview">Codebase Overview</a></li>
@@ -237,6 +246,11 @@ window.config = {
   },
   markedOptions: {
     renderer: renderer
+  },
+  filterHTML: function (html, uri) {
+    return html.replace(/<h([1-6]) id="(.+?)">/g, function (a, level, id) {
+      return '<h' + level + ' id="' + id.replace(/^\-+|\-+$/g, '') + '">';
+    });
   }
 };
 </script>
