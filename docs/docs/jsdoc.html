@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta name="author" content="xovel">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@use JSDoc</title>
+  <link href="../assets/docs.css" rel="stylesheet">
+  <link href="../assets/github.css" rel="stylesheet">
+
+  <!-- page css -->
+</head>
+<body>
+
+<header class="box">@use JSDoc</header>
+
+<div id="expand"></div>
+
+<div class="box" id="main">
+  <nav id="menu">
+    <ul>
+      <li><h3>Getting Started</h3></li>
+      <li><a href="#/about-getting-started">Getting Started</a></li>
+      <li><a href="#/about-namepaths">Using namepaths</a></li>
+      <li><a href="#/about-commandline">Command-line arguments</a></li>
+      <li><a href="#/about-configuring-jsdoc">Configuring JSDoc</a></li>
+      <li><a href="#/about-configuring-default-template">Default Template</a></li>
+      <li><a href="#/about-block-inline-tags">Block and inline tags</a></li>
+      <li><a href="#/about-plugins">About JSDoc plugins</a></li>
+      <li><a href="#/plugins-markdown">Using the Markdown plugin</a></li>
+      <li><a href="#/about-tutorials">Tutorials</a></li>
+      <li><a href="#/about-including-package">Including a Package File</a></li>
+      <li><a href="#/about-including-readme">Including a README File</a></li>
+      <li><a href="#/about-license-jsdoc3">License</a></li>
+      <li><h3>JSDoc Examples</h3></li>
+      <li><a href="#/howto-es2015-classes">ES 2015 Classes</a></li>
+      <li><a href="#/howto-es2015-modules">ES 2015 Modules</a></li>
+      <li><a href="#/howto-commonjs-modules">CommonJS Modules</a></li>
+      <li><a href="#/howto-amd-modules">AMD Modules</a></li>
+      <li><h3>Block Tags</h3></li>
+      <li><a href="#/tags-abstract">@abstract</a></li>
+      <li><a href="#/tags-access">@access</a></li>
+      <li><a href="#/tags-alias">@alias</a></li>
+      <li><a href="#/tags-async">@async</a></li>
+      <li><a href="#/tags-param">@arg</a></li>
+      <li><a href="#/tags-param">@argument</a></li>
+      <li><a href="#/tags-augments">@augments</a></li>
+      <li><a href="#/tags-author">@author</a></li>
+      <li><a href="#/tags-borrows">@borrows</a></li>
+      <li><a href="#/tags-callback">@callback</a></li>
+      <li><a href="#/tags-class">@class</a></li>
+      <li><a href="#/tags-classdesc">@classdesc</a></li>
+      <li><a href="#/tags-constant">@const</a></li>
+      <li><a href="#/tags-constant">@constant</a></li>
+      <li><a href="#/tags-class">@constructor</a></li>
+      <li><a href="#/tags-constructs">@constructs</a></li>
+      <li><a href="#/tags-copyright">@copyright</a></li>
+      <li><a href="#/tags-default">@default</a></li>
+      <li><a href="#/tags-default">@defaultvalue</a></li>
+      <li><a href="#/tags-deprecated">@deprecated</a></li>
+      <li><a href="#/tags-description">@desc</a></li>
+      <li><a href="#/tags-description">@description</a></li>
+      <li><a href="#/tags-throws">@exception</a></li>
+      <li><a href="#/tags-fires">@emits</a></li>
+      <li><a href="#/tags-enum">@enum</a></li>
+      <li><a href="#/tags-event">@event</a></li>
+      <li><a href="#/tags-example">@example</a></li>
+      <li><a href="#/tags-exports">@exports</a></li>
+      <li><a href="#/tags-augments">@extends</a></li>
+      <li><a href="#/tags-external">@external</a></li>
+      <li><a href="#/tags-file">@file</a></li>
+      <li><a href="#/tags-file">@fileoverview</a></li>
+      <li><a href="#/tags-fires">@fires</a></li>
+      <li><a href="#/tags-function">@func</a></li>
+      <li><a href="#/tags-function">@function</a></li>
+      <li><a href="#/tags-generator">@generator</a></li>
+      <li><a href="#/tags-global">@global</a></li>
+      <li><a href="#/tags-hideconstructor">@hideconstructor</a></li>
+      <li><a href="#/tags-external">@host</a></li>
+      <li><a href="#/tags-ignore">@ignore</a></li>
+      <li><a href="#/tags-implements">@implements</a></li>
+      <li><a href="#/tags-inheritdoc">@inheritdoc</a></li>
+      <li><a href="#/tags-inner">@inner</a></li>
+      <li><a href="#/tags-instance">@instance</a></li>
+      <li><a href="#/tags-interface">@interface</a></li>
+      <li><a href="#/tags-kind">@kind</a></li>
+      <li><a href="#/tags-lends">@lends</a></li>
+      <li><a href="#/tags-license">@license</a></li>
+      <li><a href="#/tags-listens">@listens</a></li>
+      <li><a href="#/tags-member">@member</a></li>
+      <li><a href="#/tags-memberof">@memberof</a></li>
+      <li><a href="#/tags-function">@method</a></li>
+      <li><a href="#/tags-mixes">@mixes</a></li>
+      <li><a href="#/tags-mixin">@mixin</a></li>
+      <li><a href="#/tags-module">@module</a></li>
+      <li><a href="#/tags-name">@name</a></li>
+      <li><a href="#/tags-namespace">@namespace</a></li>
+      <li><a href="#/tags-override">@override</a></li>
+      <li><a href="#/tags-file">@overview</a></li>
+      <li><a href="#/tags-package">@package</a></li>
+      <li><a href="#/tags-param">@param</a></li>
+      <li><a href="#/tags-private">@private</a></li>
+      <li><a href="#/tags-property">@prop</a></li>
+      <li><a href="#/tags-property">@property</a></li>
+      <li><a href="#/tags-protected">@protected</a></li>
+      <li><a href="#/tags-public">@public</a></li>
+      <li><a href="#/tags-readonly">@readonly</a></li>
+      <li><a href="#/tags-requires">@requires</a></li>
+      <li><a href="#/tags-returns">@return</a></li>
+      <li><a href="#/tags-returns">@returns</a></li>
+      <li><a href="#/tags-see">@see</a></li>
+      <li><a href="#/tags-since">@since</a></li>
+      <li><a href="#/tags-static">@static</a></li>
+      <li><a href="#/tags-summary">@summary</a></li>
+      <li><a href="#/tags-this">@this</a></li>
+      <li><a href="#/tags-throws">@throws</a></li>
+      <li><a href="#/tags-todo">@todo</a></li>
+      <li><a href="#/tags-tutorial">@tutorial</a></li>
+      <li><a href="#/tags-type">@type</a></li>
+      <li><a href="#/tags-typedef">@typedef</a></li>
+      <li><a href="#/tags-member">@var</a></li>
+      <li><a href="#/tags-variation">@variation</a></li>
+      <li><a href="#/tags-version">@version</a></li>
+      <li><a href="#/tags-abstract">@virtual</a></li>
+      <li><a href="#/tags-yields">@yield</a></li>
+      <li><a href="#/tags-yields">@yields</a></li>
+      <li><h3>Inline Tags</h3></li>
+      <li><a href="#/tags-inline-link">{@link}</a></li>
+      <li><a href="#/tags-inline-link">{@linkcode}</a></li>
+      <li><a href="#/tags-inline-link">{@linkplain}</a></li>
+      <li><a href="#/tags-inline-tutorial">{@tutorial}</a></li>
+      <li><h3>Contribute</h3></li>
+      <li><a href="https://github.com/jsdoc3/jsdoc" target="_blank">JSDoc project on GitHub</a></li>
+      <li><a href="https://github.com/jsdoc3/jsdoc3.github.com" target="_blank">Use JSDoc project on GitHub</a></li>
+    </ul>
+  </nav>
+  <article id="content" class="md-github"></article>
+</div>
+
+<footer>
+  <div class="box">Powered by HDK4.com, designed by xovel.</div>
+</footer>
+
+<a href="https://github.com/hdk4/garden/tree/master/src/docs" class="github-corner" aria-label="View source on Github">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#202020; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+  </svg>
+</a>
+
+<script src="https://cdn.bootcss.com/marked/0.4.0/marked.min.js"></script>
+<script src="https://cdn.bootcss.com/es6-promise/4.1.1/es6-promise.min.js"></script>
+<script src="https://cdn.bootcss.com/fetch/2.0.4/fetch.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/stylus.min.js"></script>
+
+<script>
+window.config = {
+  url: 'https://github.com/jsdoc3/jsdoc3.github.com',
+  branch: 'master',
+  rootPath: '/content/en',
+  assetPath: '/',
+  defaultPage: '/index',
+  fileExt: '.md',
+  cache: 1,
+  filterRaw: function (raw, uri) {
+    window._list = [];
+    return raw.replace(/(```+|~~~+)html.*?\n([\s\S]*?)\1/g, function (a, b, c) {
+      _list .push(c);
+      return '<div id="_p' + _list.length + '"></div>';
+    });
+  },
+  filterHTML: function (html, uri) {
+    if (uri === '/index') {
+      config.filterLink = null;
+      return `<h1>Index</h1>
+    <h2>Getting Started</h2>
+    <dl>
+      <dt><a href="#/about-getting-started">Getting Started with JSDoc 3</a></dt>
+      <dd>A quick-start to documenting JavaScript with JSDoc.</dd>
+      <dt><a href="#/about-namepaths">Using namepaths with JSDoc 3</a></dt>
+      <dd>A guide to using namepaths with JSDoc 3.</dd>
+      <dt><a href="#/about-commandline">Command-line arguments to JSDoc</a></dt>
+      <dd>About command-line arguments to JSDoc.</dd>
+      <dt><a href="#/about-configuring-jsdoc">Configuring JSDoc with a configuration file</a></dt>
+      <dd>How to configure JSDoc using a configuration file.</dd>
+      <dt><a href="#/about-configuring-default-template">Configuring JSDoc&#39;s default template</a></dt>
+      <dd>How to configure the output from JSDoc&#39;s default template.</dd>
+      <dt><a href="#/about-block-inline-tags">Block and inline tags</a></dt>
+      <dd>Overview of block and inline JSDoc tags.</dd>
+      <dt><a href="#/about-plugins">About JSDoc plugins</a></dt>
+      <dd>How to create and use JSDoc plugins.</dd>
+      <dt><a href="#/plugins-markdown">Using the Markdown plugin</a></dt>
+      <dd>Enable Markdown support in JSDoc.</dd>
+      <dt><a href="#/about-tutorials">Tutorials</a></dt>
+      <dd>Adding tutorials to your API documentation.</dd>
+      <dt><a href="#/about-including-package">Including a Package File</a></dt>
+      <dd>How to show package details in your documentation.</dd>
+      <dt><a href="#/about-including-readme">Including a README File</a></dt>
+      <dd>How to include a README file in your documentation.</dd>
+      <dt><a href="#/about-license-jsdoc3">License</a></dt>
+      <dd>License information for JSDoc 3.</dd>
+    </dl>
+    <h2>JSDoc Examples</h2>
+    <dl>
+      <dt><a href="#/howto-es2015-classes">ES 2015 Classes</a></dt>
+      <dd>How to add JSDoc comments to ECMAScript 2015 classes.</dd>
+      <dt><a href="#/howto-es2015-modules">ES 2015 Modules</a></dt>
+      <dd>How to add JSDoc comments to ECMAScript 2015 modules.</dd>
+      <dt><a href="#/howto-commonjs-modules">CommonJS Modules</a></dt>
+      <dd>How to add JSDoc comments to CommonJS and Node.js modules.</dd>
+      <dt><a href="#/howto-amd-modules">AMD Modules</a></dt>
+      <dd>How to add JSDoc comments to AMD and RequireJS modules.</dd>
+    </dl>
+    <h2 id="block-tags">Block Tags</h2>
+    <dl>
+      <dt><a href="#/tags-abstract">@abstract</a> (synonyms: @virtual)</dt>
+      <dd>This member must be implemented (or overridden) by the inheritor.</dd>
+      <dt><a href="#/tags-access">@access</a></dt>
+      <dd>Specify the access level of this member (private, package-private, public, or protected).</dd>
+      <dt><a href="#/tags-alias">@alias</a></dt>
+      <dd>Treat a member as if it had a different name.</dd>
+      <dt><a href="#/tags-async">@async</a></dt>
+      <dd>Indicate that a function is asynchronous.</dd>
+      <dt><a href="#/tags-augments">@augments</a> (synonyms: @extends)</dt>
+      <dd>Indicate that a symbol inherits from, and adds to, a parent symbol.</dd>
+      <dt><a href="#/tags-author">@author</a></dt>
+      <dd>Identify the author of an item.</dd>
+      <dt><a href="#/tags-borrows">@borrows</a></dt>
+      <dd>This object uses something from another object.</dd>
+      <dt><a href="#/tags-callback">@callback</a></dt>
+      <dd>Document a callback function.</dd>
+      <dt><a href="#/tags-class">@class</a> (synonyms: @constructor)</dt>
+      <dd>This function is intended to be called with the &quot;new&quot; keyword.</dd>
+      <dt><a href="#/tags-classdesc">@classdesc</a></dt>
+      <dd>Use the following text to describe the entire class.</dd>
+      <dt><a href="#/tags-constant">@constant</a> (synonyms: @const)</dt>
+      <dd>Document an object as a constant.</dd>
+      <dt><a href="#/tags-constructs">@constructs</a></dt>
+      <dd>This function member will be the constructor for the previous class.</dd>
+      <dt><a href="#/tags-copyright">@copyright</a></dt>
+      <dd>Document some copyright information.</dd>
+      <dt><a href="#/tags-default">@default</a> (synonyms: @defaultvalue)</dt>
+      <dd>Document the default value.</dd>
+      <dt><a href="#/tags-deprecated">@deprecated</a></dt>
+      <dd>Document that this is no longer the preferred way.</dd>
+      <dt><a href="#/tags-description">@description</a> (synonyms: @desc)</dt>
+      <dd>Describe a symbol.</dd>
+      <dt><a href="#/tags-enum">@enum</a></dt>
+      <dd>Document a collection of related properties.</dd>
+      <dt><a href="#/tags-event">@event</a></dt>
+      <dd>Document an event.</dd>
+      <dt><a href="#/tags-example">@example</a></dt>
+      <dd>Provide an example of how to use a documented item.</dd>
+      <dt><a href="#/tags-exports">@exports</a></dt>
+      <dd>Identify the member that is exported by a JavaScript module.</dd>
+      <dt><a href="#/tags-external">@external</a> (synonyms: @host)</dt>
+      <dd>Identifies an external class, namespace, or module.</dd>
+      <dt><a href="#/tags-file">@file</a> (synonyms: @fileoverview, @overview)</dt>
+      <dd>Describe a file.</dd>
+      <dt><a href="#/tags-fires">@fires</a> (synonyms: @emits)</dt>
+      <dd>Describe the events this method may fire.</dd>
+      <dt><a href="#/tags-function">@function</a> (synonyms: @func, @method)</dt>
+      <dd>Describe a function or method.</dd>
+      <dt><a href="#/tags-generator">@generator</a></dt>
+      <dd>Indicate that a function is a generator function.</dd>
+      <dt><a href="#/tags-global">@global</a></dt>
+      <dd>Document a global object.</dd>
+      <dt><a href="#/tags-hideconstructor">@hideconstructor</a></dt>
+      <dd>Indicate that the constructor should not be displayed.</dd>
+      <dt><a href="#/tags-ignore">@ignore</a></dt>
+      <dd>Omit a symbol from the documentation.</dd>
+      <dt><a href="#/tags-implements">@implements</a></dt>
+      <dd>This symbol implements an interface.</dd>
+      <dt><a href="#/tags-inheritdoc">@inheritdoc</a></dt>
+      <dd>Indicate that a symbol should inherit its parent&#39;s documentation.</dd>
+      <dt><a href="#/tags-inner">@inner</a></dt>
+      <dd>Document an inner object.</dd>
+      <dt><a href="#/tags-instance">@instance</a></dt>
+      <dd>Document an instance member.</dd>
+      <dt><a href="#/tags-interface">@interface</a></dt>
+      <dd>This symbol is an interface that others can implement.</dd>
+      <dt><a href="#/tags-kind">@kind</a></dt>
+      <dd>What kind of symbol is this?</dd>
+      <dt><a href="#/tags-lends">@lends</a></dt>
+      <dd>Document properties on an object literal as if they belonged to a symbol with a given name.</dd>
+      <dt><a href="#/tags-license">@license</a></dt>
+      <dd>Identify the license that applies to this code.</dd>
+      <dt><a href="#/tags-listens">@listens</a></dt>
+      <dd>List the events that a symbol listens for.</dd>
+      <dt><a href="#/tags-member">@member</a> (synonyms: @var)</dt>
+      <dd>Document a member.</dd>
+      <dt><a href="#/tags-memberof">@memberof</a></dt>
+      <dd>This symbol belongs to a parent symbol.</dd>
+      <dt><a href="#/tags-mixes">@mixes</a></dt>
+      <dd>This object mixes in all the members from another object.</dd>
+      <dt><a href="#/tags-mixin">@mixin</a></dt>
+      <dd>Document a mixin object.</dd>
+      <dt><a href="#/tags-module">@module</a></dt>
+      <dd>Document a JavaScript module.</dd>
+      <dt><a href="#/tags-name">@name</a></dt>
+      <dd>Document the name of an object.</dd>
+      <dt><a href="#/tags-namespace">@namespace</a></dt>
+      <dd>Document a namespace object.</dd>
+      <dt><a href="#/tags-override">@override</a></dt>
+      <dd>Indicate that a symbol overrides its parent.</dd>
+      <dt><a href="#/tags-package">@package</a></dt>
+      <dd>This symbol is meant to be package-private.</dd>
+      <dt><a href="#/tags-param">@param</a> (synonyms: @arg, @argument)</dt>
+      <dd>Document the parameter to a function.</dd>
+      <dt><a href="#/tags-private">@private</a></dt>
+      <dd>This symbol is meant to be private.</dd>
+      <dt><a href="#/tags-property">@property</a> (synonyms: @prop)</dt>
+      <dd>Document a property of an object.</dd>
+      <dt><a href="#/tags-protected">@protected</a></dt>
+      <dd>This symbol is meant to be protected.</dd>
+      <dt><a href="#/tags-public">@public</a></dt>
+      <dd>This symbol is meant to be public.</dd>
+      <dt><a href="#/tags-readonly">@readonly</a></dt>
+      <dd>This symbol is meant to be read-only.</dd>
+      <dt><a href="#/tags-requires">@requires</a></dt>
+      <dd>This file requires a JavaScript module.</dd>
+      <dt><a href="#/tags-returns">@returns</a> (synonyms: @return)</dt>
+      <dd>Document the return value of a function.</dd>
+      <dt><a href="#/tags-see">@see</a></dt>
+      <dd>Refer to some other documentation for more information.</dd>
+      <dt><a href="#/tags-since">@since</a></dt>
+      <dd>When was this feature added?</dd>
+      <dt><a href="#/tags-static">@static</a></dt>
+      <dd>Document a static member.</dd>
+      <dt><a href="#/tags-summary">@summary</a></dt>
+      <dd>A shorter version of the full description.</dd>
+      <dt><a href="#/tags-this">@this</a></dt>
+      <dd>What does the &#39;this&#39; keyword refer to here?</dd>
+      <dt><a href="#/tags-throws">@throws</a> (synonyms: @exception)</dt>
+      <dd>Describe what errors could be thrown.</dd>
+      <dt><a href="#/tags-todo">@todo</a></dt>
+      <dd>Document tasks to be completed.</dd>
+      <dt><a href="#/tags-tutorial">@tutorial</a></dt>
+      <dd>Insert a link to an included tutorial file.</dd>
+      <dt><a href="#/tags-type">@type</a></dt>
+      <dd>Document the type of an object.</dd>
+      <dt><a href="#/tags-typedef">@typedef</a></dt>
+      <dd>Document a custom type.</dd>
+      <dt><a href="#/tags-variation">@variation</a></dt>
+      <dd>Distinguish different objects with the same name.</dd>
+      <dt><a href="#/tags-version">@version</a></dt>
+      <dd>Documents the version number of an item.</dd>
+      <dt><a href="#/tags-yields">@yields</a> (synonyms: @yield)</dt>
+      <dd>Document the value yielded by a generator function.</dd>
+    </dl>
+    <h2 id="inline-tags">Inline Tags</h2>
+    <dl>
+      <dt><a href="#/tags-inline-link">{@link}</a> (synonyms: {@linkcode}, {@linkplain})</dt>
+      <dd>Link to another item in the documentation.</dd>
+      <dt><a href="#/tags-inline-tutorial">{@tutorial}</a></dt>
+      <dd>Link to a tutorial.</dd>
+    </dl>
+    <h2>Contribute</h2>
+    <dl>
+      <dt><a href="https://github.com/jsdoc3/jsdoc" target="_blank">JSDoc project on GitHub</a></dt>
+      <dd>Contribute to JSDoc.</dd>
+      <dt><a href="https://github.com/jsdoc3/jsdoc3.github.com" target="_blank">Use JSDoc project on GitHub</a></dt>
+      <dd>Contribute to the JSDoc documentation.</dd>
+    </dl>`
+    }
+
+    html = html.replace(/<div id="_p(\d+)"><\/div>/g, function (a, b) {
+      var n = +b - 1;
+      var c = _list[n];
+      return '<blockquote>' + c + '</blockquote>';
+    });
+
+    return html.replace(/\{% *endexample *%\}/g, '').replace(/\{% *(.+?) *%\}/g, function (a, b) {
+      return '<h4>' + b + '</h4>';
+    });
+  },
+  filterLink: function (link, uri) {
+    if (link.indexOf('.html') !== -1) {
+      return '#/' + link.replace('.html', '');
+    }
+    if (link[0] === '#') {
+      return '#' + uri + link;
+    }
+  }
+};
+</script>
+
+<script src="../assets/docs.js"></script>
+
+</body>
+</html>
