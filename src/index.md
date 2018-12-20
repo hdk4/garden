@@ -38,6 +38,8 @@ Visit this [list](https://hdk4.com/garden/docs/index.html) directly.
 - [axios](https://hdk4.com/garden/docs/axios.html)
 - [gulp v4](https://hdk4.com/garden/docs/gulp.html), [v3.9.1](https://hdk4.com/garden/docs/gulp-v3.9.1.html)
 - [stylus](https://hdk4.com/garden/docs/stylus.html)
+- [JSDoc](https://hdk4.com/garden/docs/jsdoc.html)
+- [Docker CLI](https://hdk4.com/garden/docs/docker-cli.html)
 
 > Caution: While using Chinese, due to the encode/decode problems, some links maybe **invalid**. There is no plans to fixed it, just visit the English documentation alternatively.
 
