@@ -57,14 +57,22 @@ marked.defaults.highlight = function (code, lang) {
     }
   })();
 
-  // ***
   var $menu = document.getElementById('menu');
   var $expand = document.getElementById('expand');
 
-  $expand.onclick = function () {
-    var isShow = $menu.className === 'show';
-    $menu.className = isShow ? 'hide' : 'show';
-  };
+  if (config.noMenu) {
+    if ($menu) {
+      $menu.parentNode.removeChild($menu)
+    }
+    if ($expand) {
+      $expand.parentNode.removeChild($expand)
+    }
+  } else {
+    $expand.onclick = function () {
+      var isShow = $menu.className === 'show';
+      $menu.className = isShow ? 'hide' : 'show';
+    };
+  }
 
   var _repo = config.url.split('/');
   config.owner = _repo[3];
@@ -96,6 +104,10 @@ marked.defaults.highlight = function (code, lang) {
   var isPageChange = false;
 
   function setAnchor() {
+    if (config.noMenu) {
+      return
+    }
+
     var $navs = $menu.querySelectorAll('a');
     $navs.forEach(function (item) {
       var curHref = item.getAttribute('href');
