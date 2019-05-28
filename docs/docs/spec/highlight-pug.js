@@ -1,22 +1,56 @@
-hljs.registerLanguage('pug', highlightPug)
-
 function highlightPug(hljs) {
-  var SELECTORS = "abbr|acronym|address|area|article|aside|audio|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|command|datalist|dd|del|details|dfn|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|ins|kbd|keygen|label|legend|li|link|map|mark|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|rp|rt|ruby|samp|script|section|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video";
-  var PARAM_ONLY_SELECTORS = "a|input";
+
+  var TAG_SELECTORS = 'abbr|acronym|address|area|article|aside|audio|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|command|datalist|dd|del|details|dfn|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|ins|kbd|keygen|label|legend|li|link|map|mark|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|rp|rt|ruby|samp|script|section|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video|a|input';
+
   return {
     case_insensitive: false,
+    keywords: {
+      keyword: 'define if else unless each for in elseif var const let while do import include block extends switch case when default break continue until append prepend'
+    },
     contains: [
-      // id's
+      // string
       {
-        className: 'id',
-        begin: '\\#[A-Za-z0-9_-]+',
+        className: 'string',
+        begin: '`', end: '`',
+        illegal: '\\n',
+        contains: [hljs.BACKSLASH_ESCAPE]
+      },
+      // doctype
+      {
+        className: 'comment',
+        begin: 'doctype.*',
         relevance: 0
       },
-      // classes
+      // variable
       {
-        className: 'class',
-        begin: '\\.[A-Za-z0-9_-]+',
-        relevance: 0
+        className: 'variable',
+        relevance: 0,
+        variants: [
+          {
+            begin: '\\#{', end: '\\}', excludeBegin: true, excludeEnd: true
+          },
+          {
+            begin: '\\${', end: '\\}', excludeBegin: true, excludeEnd: true
+          }
+        ]
+      },
+      // comment
+      {
+        className: 'comment',
+        begin: /\/\/-?.*/
+      },
+      // tag
+      {
+        className: 'selector-tag',
+        begin: '\\b(' + TAG_SELECTORS + ')\\b'
+      },
+      // id
+      {
+        className: 'selector-id', begin: /#[A-Za-z0-9_-]+/
+      },
+      // class
+      {
+        className: 'type', begin: /\.[A-Za-z0-9_-]+/
       },
       // attributes
       {
@@ -24,72 +58,15 @@ function highlightPug(hljs) {
         begin: '&attributes',
         relevance: 0
       },
-      // selectors with parameters
+      // symbol
       {
-        className: 'selector-with-params',
-        begin: '\\b(' + PARAM_ONLY_SELECTORS + '|' + SELECTORS + ')\\b\\(', end: '\\)',
-        relevance: 0,
-        contains: [
-          {
-            className: 'param-type',
-            begin: '\\b(href|type|placeholder|data-json|name|checked|class|click|escaped|unescaped)\\b'
-          },
-          {
-            className: 'param-def',
-            variants: [
-              {
-                begin: /'/, end: /'/
-              },
-              {
-                begin: /"/, end: /"/
-              },
-              {
-                begin: /`/, end: /`/
-              }
-            ],
-          },
-          {
-            className: 'param-split',
-            variants: [
-              {
-                begin: /=/
-              },
-              {
-                begin: /,/
-              },
-              {
-                begin: /:/
-              },
-              {
-                begin: '\\?'
-              }
-            ]
-          }
-        ]
-      },
-      // Selectors without parameters
-      {
-        className: 'selector',
-        begin: '\\b(' + SELECTORS + ')\\b',
-      },
-      // Variables
-      {
-        className: 'variable',
-        relevance: 0,
-        variants: [
-          {
-            begin: '\\#{', end: '\\}'
-          },
-          {
-            begin: '\\${', end: '\\}'
-          }
-        ]
-      },
-      // Comments
-      {
-        className: 'comment',
-        begin: '\\//- [A-Za-z0-9_-]+',
+        className: 'symbol',
+        begin: /[=,:?!]|\.($|\n)/
       }
     ]
   };
+}
+
+if (typeof hljs !== 'undefined') {
+  hljs.registerLanguage('pug', highlightPug);
 }
