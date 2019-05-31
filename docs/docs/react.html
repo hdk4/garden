@@ -157,7 +157,8 @@ renderer.code = function(code, lang, escaped) {
   var hLines = [];
   var matched = lang && lang.match(/\{(.+?)\}/);
   if (matched) {
-    hLines = getHLines(matched[1]);
+    var lines = code.split('\n').length;
+    hLines = getHLines(matched[1]).filter(item => item <= lines);
     lang = lang.replace(/\{(.+?)\}/, '');
   }
   var rendered = codeTemplate.call(this, code, lang, escaped);
