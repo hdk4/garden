@@ -55,6 +55,14 @@ marked.defaults.highlight = function (code, lang) {
     for (var i = 0; i < $temp.length; i++) {
       $temp[i].style.height = height;
     }
+
+    // add back to list
+    var $header = document.querySelector('header.box');
+    var $home = document.createElement('a');
+    $home.setAttribute('href', './');
+    $home.innerHTML = 'list';
+    $home.style.float = 'right';
+    $header.appendChild($home);
   })();
 
   var $menu = document.getElementById('menu');
